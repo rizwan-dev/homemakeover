@@ -17,17 +17,15 @@ export default function ProjectDetail() {
       category: 'interior',
       location: 'Forest County, Kharadi, Pune',
       area: '1,200 sq ft',
-      duration: '2.5 months',
+      duration: '38 days',
       budget: '₹4.5 Lakhs',
       status: 'Completed',
-      mainImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
+      mainImage: '/images/project/01-forest-county-kharadi-2bhk-interior-main.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop'
+        '/images/project/01-forest-county-kharadi-2bhk-interior-main.webp',
+        '/images/project/01-forest-county-kharadi-2bhk-interior-1.webp',
+        '/images/project/01-forest-county-kharadi-2bhk-interior-2.webp',
+        '/images/project/01-forest-county-kharadi-2bhk-interior-3.webp'
       ],
       description: 'Complete interior design transformation for a 2 BHK apartment in Forest County, Kharadi. This project included modern living room design, kitchen renovation, master bedroom makeover, and bathroom upgrades. The client wanted a contemporary design that maximized space utilization while maintaining aesthetic appeal.',
       longDescription: `This project was a complete transformation of a 2 BHK apartment in Forest County, Kharadi. The client, Mr. & Mrs. Sharma, wanted a modern, functional, and aesthetically pleasing interior that would make the most of their 1,200 sq ft space.
@@ -56,6 +54,7 @@ The design focused on creating an open, airy feel while maintaining privacy and 
       specifications: {
         'Project Type': 'Residential Interior Design',
         'Location': 'Forest County, Kharadi, Pune',
+        'Society': 'Forest County',
         'Status': 'Completed',
         'Client': 'Mr. & Mrs. Sharma',
         'Completion Date': 'December 2023',
@@ -68,6 +67,396 @@ The design focused on creating an open, airy feel while maintaining privacy and 
         rating: 5,
         name: 'Mr. & Mrs. Sharma',
         location: 'Forest County, Kharadi'
+      }
+    },
+    {
+      id: 4,
+      title: 'Modern Office Space - Kalyani Nagar',
+      category: 'interior',
+      location: 'Kalyani Nagar, Pune',
+      area: '2,000 sq ft',
+      duration: '35 days',
+      budget: '₹6.5 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/04-kalyani-nagar-modern-office-interior-main.webp',
+      gallery: [
+        '/images/project/04-kalyani-nagar-modern-office-interior-main.webp',
+        '/images/project/04-kalyani-nagar-modern-office-interior-1.webp',
+        '/images/project/04-kalyani-nagar-modern-office-interior-2.webp',
+        '/images/project/04-kalyani-nagar-modern-office-interior-3.webp'
+      ],
+      description: 'Contemporary office space design with open floor plan, meeting rooms, and modern amenities for a growing tech company.',
+      longDescription: `A complete office space transformation for a fast-growing company in Kalyani Nagar. The design focused on productivity, collaboration, and brand presence with an open floor plan, quiet rooms, and modern lighting. The material palette balanced durability and aesthetics with warm wood tones and acoustic treatments.`,
+      features: [
+        'Open Floor Plan Design',
+        'Conference Rooms with AV Setup',
+        'Reception and Waiting Area',
+        'Break Room and Pantry',
+        'Ergonomic Workstations',
+        'Modern Lighting Design'
+      ],
+      specifications: {
+        'Project Type': 'Commercial Interior',
+        'Location': 'Kalyani Nagar, Pune',
+        'Society': 'Cerebrum IT Park',
+        'Status': 'Completed',
+        'Client': 'TechStart Solutions',
+        'Completion Date': 'September 2023',
+        'Services Used': 'Interior Design, Carpentry, Electrical, Lighting'
+      },
+      client: 'TechStart Solutions',
+      completionDate: 'September 2023',
+      testimonial: {
+        text: 'Our new office is inspiring and functional. The team delivered a beautiful space on time and within budget.',
+        rating: 5,
+        name: 'Operations Head',
+        location: 'Kalyani Nagar'
+      }
+    },
+    {
+      id: 5,
+      title: 'Interior Wall Painting - Wagholi',
+      category: 'painting',
+      location: 'Wagholi, Pune',
+      area: '1,500 sq ft',
+      duration: '14 days',
+      budget: '₹95,000',
+      status: 'Completed',
+      mainImage: '/images/project/05-wagholi-interior-wall-painting-main.webp',
+      gallery: [
+        '/images/project/05-wagholi-interior-wall-painting-main.webp',
+        '/images/project/05-wagholi-interior-wall-painting-1.webp',
+        '/images/project/05-wagholi-interior-wall-painting-2.webp',
+        '/images/project/05-wagholi-interior-wall-painting-3.webp'
+      ],
+      description: 'Premium interior painting project with texture work, special effects, and color consultation for a modern apartment.',
+      longDescription: `End-to-end repainting with surface preparation, primer, and low-VOC premium paints. A textured feature wall was added in the living room while bedrooms used soothing tones. We ensured clean execution and quick turnaround with minimal disruption.`,
+      features: [
+        'Premium Quality Interior Paints',
+        'Texture and Special Effects',
+        'Color Consultation',
+        'Wall Preparation and Priming',
+        'Clean and Professional Finish',
+        '2-Year Warranty'
+      ],
+      specifications: {
+        'Project Type': 'Interior Painting',
+        'Location': 'Wagholi, Pune',
+        'Society': 'Ivy Estate',
+        'Status': 'Completed',
+        'Client': 'Ms. Anjali Deshmukh',
+        'Completion Date': 'August 2023',
+        'Services Used': 'Interior Painting, Surface Prep, Texture'
+      },
+      client: 'Ms. Anjali Deshmukh',
+      completionDate: 'August 2023',
+      testimonial: {
+        text: 'Flawless finish and great color guidance. The team was punctual and professional throughout.',
+        rating: 5,
+        name: 'Ms. Anjali Deshmukh',
+        location: 'Wagholi'
+      }
+    },
+    {
+      id: 6,
+      title: 'False Ceiling Installation - Kesnand',
+      category: 'interior',
+      location: 'Kesnand, Pune',
+      area: '1,800 sq ft',
+      duration: '30 days',
+      budget: '₹2.2 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/06-kesnand-false-ceiling-installation-main.webp',
+      gallery: [
+        '/images/project/06-kesnand-false-ceiling-installation-main.webp',
+        '/images/project/06-kesnand-false-ceiling-installation-1.webp',
+        '/images/project/06-kesnand-false-ceiling-installation-2.webp',
+        '/images/project/06-kesnand-false-ceiling-installation-3.webp'
+      ],
+      description: 'Modern false ceiling installation with LED integration, acoustic panels, and contemporary design for a restaurant space.',
+      longDescription: `A lighting-driven ceiling design with cove lighting, recessed profiles, and acoustic panels. The ceiling design balanced aesthetics and functionality while improving ambient lighting levels.`,
+      features: [
+        'Custom False Ceiling Design',
+        'LED Integration and Lighting',
+        'Acoustic Panels',
+        'POP (Plaster of Paris) Work',
+        'Modern and Classic Styles',
+        'Professional Installation'
+      ],
+      specifications: {
+        'Project Type': 'Ceiling & Lighting',
+        'Location': 'Kesnand, Pune',
+        'Society': 'Kesnand Greens',
+        'Status': 'Completed',
+        'Client': 'Mr. Vikram Singh',
+        'Completion Date': 'July 2023',
+        'Services Used': 'POP, Lighting, Electrical'
+      },
+      client: 'Mr. Vikram Singh',
+      completionDate: 'July 2023',
+      testimonial: {
+        text: 'Excellent finish and creative lighting ideas. The space looks premium and inviting.',
+        rating: 5,
+        name: 'Mr. Vikram Singh',
+        location: 'Kesnand'
+      }
+    },
+    {
+      id: 7,
+      title: '2 BHK Interior Design - Nyati Elan, Wagholi',
+      category: 'interior',
+      location: 'Nyati Elan, Wagholi, Pune',
+      area: '1,000 sq ft',
+      duration: '28 days',
+      budget: '₹3.8 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/07-nyati-elan-wagholi-2bhk-interior-main.webp',
+      gallery: [
+        '/images/project/07-nyati-elan-wagholi-2bhk-interior-main.webp',
+        '/images/project/07-nyati-elan-wagholi-2bhk-interior-1.webp',
+        '/images/project/07-nyati-elan-wagholi-2bhk-interior-2.webp'
+      ],
+      description: 'Full interior design for a 2 BHK featuring a cozy living room, modular kitchen, and smart bedroom storage.',
+      longDescription: `A compact yet warm 2 BHK interior. We focused on maximizing storage, using light tones, and integrating accent lighting. The kitchen received a modular layout with durable finishes. Bedrooms feature space-efficient wardrobes and study corners.`,
+      features: [
+        'Modular Kitchen',
+        'Custom TV Unit',
+        'Bedroom Wardrobes',
+        'Accent Lighting',
+        'Space Optimization',
+        'Premium Finishes'
+      ],
+      specifications: {
+        'Project Type': 'Residential Interior',
+        'Location': 'Nyati Elan, Wagholi, Pune',
+        'Society': 'Nyati Elan',
+        'Status': 'Completed',
+        'Client': 'Mr. & Mrs. Kulkarni',
+        'Completion Date': 'January 2024',
+        'Services Used': 'Interior Design, Carpentry, Electrical, Painting'
+      },
+      client: 'Mr. & Mrs. Kulkarni',
+      completionDate: 'January 2024',
+      testimonial: {
+        text: 'Beautiful designs and very practical use of space. Great experience end-to-end.',
+        rating: 5,
+        name: 'Mr. & Mrs. Kulkarni',
+        location: 'Nyati Elan, Wagholi'
+      }
+    },
+    {
+      id: 8,
+      title: '3 BHK Interior Makeover - Majestique Towers, Kharadi',
+      category: 'interior',
+      location: 'Majestique Towers, Kharadi, Pune',
+      area: '1,400 sq ft',
+      duration: '32 days',
+      budget: '₹6.2 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/08-majestique-towers-kharadi-3bhk-makeover-main.webp',
+      gallery: [
+        '/images/project/08-majestique-towers-kharadi-3bhk-makeover-main.webp',
+        '/images/project/08-majestique-towers-kharadi-3bhk-makeover-1.webp',
+        '/images/project/08-majestique-towers-kharadi-3bhk-makeover-2.webp'
+      ],
+      description: 'Contemporary interior design for a 3 BHK including false ceiling, wall paneling, and custom furniture.',
+      longDescription: `A premium makeover with a warm contemporary palette. The home features veneer wall paneling, cozy lighting, and bespoke furniture for the living and bedrooms. Kitchen storage was optimized with soft-close hardware and quartz counters.`,
+      features: [
+        'False Ceiling with Cove Lighting',
+        'Wall Paneling',
+        'Custom Furniture',
+        'Premium Veneers',
+        'Warm Lighting',
+        'Professional Installation'
+      ],
+      specifications: {
+        'Project Type': 'Residential Interior',
+        'Location': 'Majestique Towers, Kharadi, Pune',
+        'Society': 'Majestique Towers',
+        'Status': 'Completed',
+        'Client': 'Ms. Rutuja Patil',
+        'Completion Date': 'February 2024',
+        'Services Used': 'Interior Design, Carpentry, Electrical, Painting'
+      },
+      client: 'Ms. Rutuja Patil',
+      completionDate: 'February 2024',
+      testimonial: {
+        text: 'Loved the finishes and detailing. The home feels luxurious yet practical.',
+        rating: 5,
+        name: 'Ms. Rutuja Patil',
+        location: 'Kharadi'
+      }
+    },
+    {
+      id: 9,
+      title: 'Premium Interior - VTP Pegasus, Kharadi',
+      category: 'interior',
+      location: 'VTP Pegasus, Kharadi, Pune',
+      area: '1,250 sq ft',
+      duration: '34 days',
+      budget: '₹5.1 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/09-vtp-pegasus-kharadi-premium-interior-main.webp',
+      gallery: [
+        '/images/project/09-vtp-pegasus-kharadi-premium-interior-main.webp',
+        '/images/project/09-vtp-pegasus-kharadi-premium-interior-1.webp',
+        '/images/project/09-vtp-pegasus-kharadi-premium-interior-2.webp'
+      ],
+      description: 'Premium interior package with modular kitchen, wardrobe systems, and LED-integrated false ceiling for a modern finish.',
+      longDescription: `A refined interior emphasizing functionality and clean lines. The kitchen features a handleless layout with quartz countertop. Bedrooms include sliding wardrobes and integrated study units. A layered ceiling with LED profiles elevates the ambiance.`,
+      features: [
+        'LED-Integrated False Ceiling',
+        'Handleless Kitchen',
+        'Sliding Wardrobes',
+        'Quartz Countertop',
+        'Designer Wall Finishes',
+        'Soft-Close Hardware'
+      ],
+      specifications: {
+        'Project Type': 'Residential Interior',
+        'Location': 'VTP Pegasus, Kharadi, Pune',
+        'Society': 'VTP Pegasus',
+        'Status': 'Completed',
+        'Client': 'Mr. Akash Deshpande',
+        'Completion Date': 'March 2024',
+        'Services Used': 'Interior Design, Carpentry, Electrical, Painting'
+      },
+      client: 'Mr. Akash Deshpande',
+      completionDate: 'March 2024',
+      testimonial: {
+        text: 'Excellent quality and thoughtful design. The team paid attention to every detail.',
+        rating: 5,
+        name: 'Mr. Akash Deshpande',
+        location: 'Kharadi'
+      }
+    },
+    {
+      id: 10,
+      title: 'Interior Painting - Ivy Estate, Wagholi',
+      category: 'painting',
+      location: 'Ivy Estate, Wagholi, Pune',
+      area: '1,100 sq ft',
+      duration: '10 days',
+      budget: '₹1.1 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/10-ivy-estate-wagholi-interior-painting-main.jpg',
+      gallery: [
+        '/images/project/10-ivy-estate-wagholi-interior-painting-main.jpg',
+        '/images/project/10-ivy-estate-wagholi-interior-painting-1.jpg',
+        '/images/project/10-ivy-estate-wagholi-interior-painting-2.jpg'
+      ],
+      description: 'Interior repainting with low-VOC premium paints, feature wall textures, and complete surface preparation.',
+      longDescription: `Quick and clean repainting job using eco-friendly paints. Included surface preparation, crack filling, and a textured feature wall in the living area.`,
+      features: [
+        'Low-VOC Paints',
+        'Surface Preparation',
+        'Feature Wall Texture',
+        'Clean Site Handover',
+        'Color Consultation',
+        '1-Year Warranty'
+      ],
+      specifications: {
+        'Project Type': 'Interior Painting',
+        'Location': 'Ivy Estate, Wagholi, Pune',
+        'Society': 'Ivy Estate',
+        'Status': 'Completed',
+        'Client': 'Mrs. Neha Jain',
+        'Completion Date': 'January 2024',
+        'Services Used': 'Interior Painting, Texture'
+      },
+      client: 'Mrs. Neha Jain',
+      completionDate: 'January 2024',
+      testimonial: {
+        text: 'Great finish and neat work. Very happy with the color outcome and speed.',
+        rating: 5,
+        name: 'Mrs. Neha Jain',
+        location: 'Wagholi'
+      }
+    },
+    {
+      id: 11,
+      title: 'Exterior Painting - Rohan Abhilasha, Wagholi',
+      category: 'painting',
+      location: 'Rohan Abhilasha, Wagholi, Pune',
+      area: '3,000 sq ft',
+      duration: '21 days',
+      budget: '₹2.1 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-main.webp',
+      gallery: [
+        '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-main.webp',
+        '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-1.webp',
+        '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-2.webp'
+      ],
+      description: 'Weatherproof exterior painting with crack-filling, waterproofing, and anti-fungal coatings for long-term protection.',
+      longDescription: `A comprehensive exterior protection and repainting with anti-fungal coats and terrace waterproofing. Crack repairs and primer ensured a durable finish.`,
+      features: [
+        'Crack Filling & Repair',
+        'Exterior Waterproofing',
+        'Anti-Fungal Coating',
+        'Weatherproof Paints',
+        'Quality Assurance',
+        '2-Year Warranty'
+      ],
+      specifications: {
+        'Project Type': 'Exterior Painting',
+        'Location': 'Rohan Abhilasha, Wagholi, Pune',
+        'Society': 'Rohan Abhilasha',
+        'Status': 'Completed',
+        'Client': 'Mr. Ravi Shinde',
+        'Completion Date': 'December 2023',
+        'Services Used': 'Exterior Painting, Waterproofing'
+      },
+      client: 'Mr. Ravi Shinde',
+      completionDate: 'December 2023',
+      testimonial: {
+        text: 'The exterior looks new again, and monsoon protection has been solid. Great job!',
+        rating: 5,
+        name: 'Mr. Ravi Shinde',
+        location: 'Wagholi'
+      }
+    },
+    {
+      id: 12,
+      title: 'Compact 1.5 BHK Interior - Nyati Elan, Wagholi',
+      category: 'interior',
+      location: 'Nyati Elan, Wagholi, Pune',
+      area: '800 sq ft',
+      duration: '25 days',
+      budget: '₹2.9 Lakhs',
+      status: 'Completed',
+      mainImage: '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-main.webp',
+      gallery: [
+        '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-main.webp',
+        '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-1.webp',
+        '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-2.webp'
+      ],
+      description: 'Smart interior for a compact home with space-saving furniture, bright tones, and practical storage.',
+      longDescription: `Designed for compact living without compromise. The plan includes multi-functional furniture, bright tones to amplify space, and clever storage in every room.`,
+      features: [
+        'Space-Saving Furniture',
+        'Bright Color Palette',
+        'Functional Storage',
+        'Compact Modular Kitchen',
+        'LED Lighting',
+        'Professional Execution'
+      ],
+      specifications: {
+        'Project Type': 'Residential Interior',
+        'Location': 'Nyati Elan, Wagholi, Pune',
+        'Society': 'Nyati Elan',
+        'Status': 'Completed',
+        'Client': 'Mr. & Mrs. Pansare',
+        'Completion Date': 'April 2024',
+        'Services Used': 'Interior Design, Carpentry, Electrical, Painting'
+      },
+      client: 'Mr. & Mrs. Pansare',
+      completionDate: 'April 2024',
+      testimonial: {
+        text: 'Amazing use of space and very neat workmanship. Perfect for our needs.',
+        rating: 5,
+        name: 'Mr. & Mrs. Pansare',
+        location: 'Nyati Elan, Wagholi'
       }
     },
     {
@@ -252,11 +641,18 @@ The team used premium weather-resistant paints and proper surface preparation te
               <div className="lg:col-span-2">
                 {/* Main Image */}
                 <div className="mb-8">
-                  <img 
-                    src={project.gallery[activeImage]} 
-                    alt={project.title}
-                    className="w-full h-96 object-cover rounded-2xl"
-                  />
+                    <img 
+                      src={project.gallery[activeImage]} 
+                      alt={project.title}
+                      className="w-full h-96 object-cover rounded-2xl"
+                      onError={(e) => {
+                        const t = e.currentTarget
+                        t.onerror = null
+                        t.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(
+                          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient></defs><rect width="1000" height="600" fill="url(#g)"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="28">Image unavailable</text></svg>'
+                        )}`
+                      }}
+                    />
                 </div>
 
                 {/* Thumbnail Gallery */}
@@ -275,6 +671,13 @@ The team used premium weather-resistant paints and proper surface preparation te
                           src={image} 
                           alt={`${project.title} - Image ${index + 1}`}
                           className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const t = e.currentTarget
+                            t.onerror = null
+                            t.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(
+                              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient></defs><rect width="300" height="200" fill="url(#g)"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">Image unavailable</text></svg>'
+                            )}`
+                          }}
                         />
                       </button>
                     ))}

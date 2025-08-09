@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
-export default function AutoSlider() {
+export default function AutoSlider({ sliderImages = [] }) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const slides = [
+  const baseSlides = [
     {
       id: 1,
       title: "Professional Interior Design",
@@ -45,6 +45,27 @@ export default function AutoSlider() {
       stats: ["5+ Areas Covered", "Quick Response", "Local Support"]
     }
   ]
+
+  // Prefer local slider images if provided
+  const slides = baseSlides.map((slide, idx) => ({
+    ...slide,
+    image: sliderImages[idx] ? `/images/slider/${sliderImages[idx]}` : slide.image,
+  }))
+
+  // If there are more local images than base slides, append simple slides for extras
+  if (sliderImages.length > slides.length) {
+    const extras = sliderImages.slice(slides.length).map((file, i) => ({
+      id: slides.length + i + 1,
+      title: 'Beautiful Home Interiors',
+      subtitle: 'Designed & Executed by Professionals',
+      description: 'End-to-end interior design and painting services in Pune with assured quality and timelines.',
+      image: `/images/slider/${file}`,
+      cta: 'Get Free Consultation',
+      ctaLink: '/survey',
+      stats: ["Quality Materials", "Expert Team", "On-Time Delivery"],
+    }))
+    slides.push(...extras)
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {

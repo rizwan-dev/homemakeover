@@ -10,13 +10,19 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-              HM
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-slate-900">Home Makeover</h1>
-              <p className="text-sm text-slate-600">Interior Design & Painting — Pune</p>
-            </div>
+            <Link href="/" className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-white shrink-0">
+                <img
+                  src="/images/brand/logo.svg"
+                  alt="Home Makeover logo"
+                  className="w-full h-full object-cover transform scale-150"
+                />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-slate-900">Home Makeover</h1>
+                <p className="text-sm text-slate-600">Interior Design & Painting — Pune</p>
+              </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
