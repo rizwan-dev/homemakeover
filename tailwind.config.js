@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#f43f5e' // rose
+          DEFAULT: '#4f46e5' // indigo-600
         }
       }
     }

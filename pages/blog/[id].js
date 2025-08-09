@@ -372,7 +372,7 @@ export default function BlogPost() {
         <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
           <div className="max-w-4xl mx-auto px-6">
             <div className="mb-6">
-              <Link href="/blog" className="text-rose-300 hover:text-white transition-colors">
+              <Link href="/blog" className="text-indigo-300 hover:text-white transition-colors">
                 ← Back to Blog
               </Link>
             </div>
@@ -386,7 +386,7 @@ export default function BlogPost() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
             <p className="text-xl text-slate-300 mb-6">{post.excerpt}</p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-rose-600 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">HM</span>
               </div>
               <div>
@@ -420,10 +420,10 @@ export default function BlogPost() {
                   Get professional help with your home makeover project. Contact us for a free consultation and quote.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/survey" className="inline-block px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors">
+                  <a href="/survey" className="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
                     Get Free Quote
                   </a>
-                  <a href="/contact" className="inline-block px-6 py-3 border-2 border-rose-600 text-rose-600 hover:bg-rose-600 hover:text-white rounded-lg font-semibold transition-colors">
+                  <a href="/contact" className="inline-block px-6 py-3 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-lg font-semibold transition-colors">
                     Contact Us
                   </a>
                 </div>
@@ -449,7 +449,7 @@ export default function BlogPost() {
                         className="w-full h-48 object-cover"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-medium">
+                        <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
                           {relatedPost.category}
                         </span>
                       </div>
@@ -464,7 +464,7 @@ export default function BlogPost() {
                       <p className="text-slate-600 mb-4 line-clamp-3">{relatedPost.excerpt}</p>
                       <Link 
                         href={`/blog/${relatedPost.id}`} 
-                        className="inline-flex items-center text-rose-600 hover:text-rose-700 font-medium transition-colors"
+                        className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
                       >
                         Read More
                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

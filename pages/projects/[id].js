@@ -228,12 +228,12 @@ The team used premium weather-resistant paints and proper surface preparation te
         <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
           <div className="max-w-6xl mx-auto px-6">
             <div className="mb-8">
-              <Link href="/projects" className="text-rose-400 hover:text-rose-300 transition-colors">
+              <Link href="/projects" className="text-indigo-300 hover:text-white transition-colors">
                 ← Back to Projects
               </Link>
             </div>
             <div className="text-center">
-              <span className="px-4 py-2 bg-rose-600 text-white rounded-full text-sm font-medium mb-4 inline-block">
+              <span className="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-medium mb-4 inline-block">
                 {project.category === 'interior' ? 'Interior Design' : 'Painting'}
               </span>
               <h1 className="text-5xl font-bold mb-6">{project.title}</h1>
@@ -268,7 +268,7 @@ The team used premium weather-resistant paints and proper surface preparation te
                         key={index}
                         onClick={() => setActiveImage(index)}
                         className={`relative h-24 rounded-lg overflow-hidden transition-all ${
-                          activeImage === index ? 'ring-2 ring-rose-600' : 'hover:opacity-80'
+                          activeImage === index ? 'ring-2 ring-indigo-600' : 'hover:opacity-80'
                         }`}
                       >
                         <img 
@@ -297,7 +297,7 @@ The team used premium weather-resistant paints and proper surface preparation te
                   <div className="grid md:grid-cols-2 gap-4">
                     {project.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
-                        <div className="w-2 h-2 bg-rose-400 rounded-full flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-indigo-400 rounded-full flex-shrink-0"></div>
                         <span className="text-slate-700">{feature}</span>
                       </div>
                     ))}
@@ -344,7 +344,7 @@ The team used premium weather-resistant paints and proper surface preparation te
                 </div>
 
                 {/* CTA */}
-                <div className="bg-gradient-to-r from-rose-600 to-rose-700 text-white rounded-2xl p-8">
+                <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-2xl p-8">
                   <h3 className="text-2xl font-bold mb-4">Start Your Project</h3>
                   <p className="mb-6 opacity-90">
                     Ready to transform your space? Get a free consultation and quote.
@@ -352,13 +352,13 @@ The team used premium weather-resistant paints and proper surface preparation te
                   <div className="space-y-4">
                     <a 
                       href="/survey" 
-                      className="block w-full px-6 py-3 bg-white text-rose-600 rounded-lg font-semibold text-center hover:bg-slate-100 transition-colors"
+                      className="block w-full px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold text-center hover:bg-slate-100 transition-colors"
                     >
                       Get Free Quote
                     </a>
                     <a 
                       href="/contact" 
-                      className="block w-full px-6 py-3 border-2 border-white text-white rounded-lg font-semibold text-center hover:bg-white hover:text-rose-600 transition-colors"
+                      className="block w-full px-6 py-3 border-2 border-white text-white rounded-lg font-semibold text-center hover:bg-white hover:text-indigo-600 transition-colors"
                     >
                       Contact Us
                     </a>
@@ -385,7 +385,7 @@ The team used premium weather-resistant paints and proper surface preparation te
                               className="w-20 h-20 object-cover rounded-lg"
                             />
                             <div>
-                              <h4 className="font-semibold text-slate-900 group-hover:text-rose-600 transition-colors">
+                              <h4 className="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
                                 {similarProject.title}
                               </h4>
                               <p className="text-sm text-slate-600">{similarProject.location}</p>

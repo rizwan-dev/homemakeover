@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center text-white font-bold text-lg">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
                 HM
               </div>
               <div>
@@ -41,37 +41,37 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-3 text-slate-300">
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services/interior-design" className="hover:text-white transition-colors">
                   Interior Design
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services/painting" className="hover:text-white transition-colors">
                   Interior Painting
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services/painting" className="hover:text-white transition-colors">
                   Exterior Painting
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services/renovation" className="hover:text-white transition-colors">
                   Carpentry Service
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services/renovation" className="hover:text-white transition-colors">
                   POP and False Ceiling
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services/renovation" className="hover:text-white transition-colors">
                   Home Electrician Service
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services/renovation" className="hover:text-white transition-colors">
                   Waterproofing
                 </Link>
               </li>

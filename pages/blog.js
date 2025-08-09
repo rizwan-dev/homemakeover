@@ -61,6 +61,9 @@ export default function Blog() {
     }
   ]
 
+  const featured = blogPosts[0]
+  const rest = blogPosts.slice(1)
+
   return (
     <>
       <Head>
@@ -80,11 +83,38 @@ export default function Blog() {
           </div>
         </section>
 
+        {/* Featured Post */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                <img src={featured.image} alt={featured.title} className="w-full h-80 object-cover" />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">{featured.category}</span>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center gap-4 text-sm text-slate-500 mb-3">
+                  <span>{featured.date}</span>
+                  <span>•</span>
+                  <span>{featured.readTime}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">{featured.title}</h2>
+                <p className="text-slate-600 mb-6 text-lg">{featured.excerpt}</p>
+                <Link href={`/blog/${featured.id}`} className="inline-flex items-center px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
+                  Read Article
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Blog Posts Grid */}
         <section className="py-20">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post) => (
+              {rest.map((post) => (
                 <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="relative">
                     <img 
@@ -93,7 +123,7 @@ export default function Blog() {
                       className="w-full h-48 object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
                         {post.category}
                       </span>
                     </div>
@@ -108,7 +138,7 @@ export default function Blog() {
                     <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
                     <Link 
                       href={`/blog/${post.id}`} 
-                      className="inline-flex items-center text-rose-600 hover:text-rose-700 font-medium transition-colors"
+                      className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
                     >
                       Read More
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,14 +182,14 @@ export default function Blog() {
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-rose-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Interior Design</h3>
                 <p className="text-slate-600 mb-4">Tips, trends, and guides for creating beautiful interiors</p>
-                <Link href="/blog?category=interior-design" className="text-rose-600 hover:text-rose-700 font-medium">
+                <Link href="/blog?category=interior-design" className="text-indigo-600 hover:text-indigo-700 font-medium">
                   View Articles →
                 </Link>
               </div>

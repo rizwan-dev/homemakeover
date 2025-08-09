@@ -92,11 +92,11 @@ export default function PaintingService() {
           <div className="relative max-w-6xl mx-auto px-6 py-24">
             <div className="text-center">
               <nav className="flex justify-center mb-8">
-                <Link href="/" className="text-rose-300 hover:text-white transition-colors">
+                <Link href="/" className="text-indigo-300 hover:text-white transition-colors">
                   Home
                 </Link>
                 <span className="mx-2 text-slate-400">/</span>
-                <Link href="/services" className="text-rose-300 hover:text-white transition-colors">
+                <Link href="/services" className="text-indigo-300 hover:text-white transition-colors">
                   Services
                 </Link>
                 <span className="mx-2 text-slate-400">/</span>
@@ -110,7 +110,7 @@ export default function PaintingService() {
                 premium quality materials and professional application techniques.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/survey" className="inline-block px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold text-lg transition-colors">
+                <a href="/survey" className="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-lg transition-colors">
                   Get Free Quote
                 </a>
                 <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-slate-900 transition-colors">
@@ -136,8 +136,8 @@ export default function PaintingService() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -178,8 +178,8 @@ export default function PaintingService() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {process.map((step, index) => (
                 <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-2xl font-bold text-amber-600">{step.step}</span>
+                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-indigo-600">{step.step}</span>
                   </div>
                   <h3 className="text-xl font-bold mb-4">{step.title}</h3>
                   <p className="text-slate-600">{step.description}</p>

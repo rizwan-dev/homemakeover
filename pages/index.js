@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import AutoSlider from '../components/AutoSlider'
@@ -7,6 +7,36 @@ import Link from 'next/link'
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const testimonialsContainerRef = useRef(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const updateScrollButtons = () => {
+    const el = testimonialsContainerRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 0)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1)
+  }
+
+  useEffect(() => {
+    updateScrollButtons()
+    const el = testimonialsContainerRef.current
+    if (!el) return
+    el.addEventListener('scroll', updateScrollButtons)
+    const onResize = () => updateScrollButtons()
+    window.addEventListener('resize', onResize)
+    return () => {
+      el.removeEventListener('scroll', updateScrollButtons)
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
+
+  const scrollTestimonials = (direction) => {
+    const el = testimonialsContainerRef.current
+    if (!el) return
+    const amount = Math.min(600, el.clientWidth * 0.9)
+    el.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' })
+  }
 
   const testimonials = [
     {
@@ -87,25 +117,43 @@ export default function Home() {
       step: '01',
       title: 'Consultation',
       description: 'Free initial consultation to understand your vision and requirements',
-      icon: '💬'
+      icon: (
+        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4-.8L3 20l.8-4A8.963 8.963 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      )
     },
     {
       step: '02',
       title: 'Design & Planning',
       description: 'Detailed design planning with 3D visualizations and material selection',
-      icon: '📐'
+      icon: (
+        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v8m4-4H8" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7" />
+        </svg>
+      )
     },
     {
       step: '03',
       title: 'Execution',
       description: 'Professional execution with quality materials and expert craftsmanship',
-      icon: '🔨'
+      icon: (
+        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 21v-4a2 2 0 012-2h3l3-3 5 5-3 3v3a2 2 0 01-2 2H6a2 2 0 01-2-2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.5 6.5l3 3" />
+        </svg>
+      )
     },
     {
       step: '04',
       title: 'Delivery',
       description: 'Timely project completion with quality assurance and warranty',
-      icon: '✅'
+      icon: (
+        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
     }
   ]
 
@@ -162,7 +210,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-rose-600 mb-2">{stat.number}</div>
+                   <div className="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">{stat.number}</div>
                   <div className="text-slate-600 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -174,7 +222,7 @@ export default function Home() {
         <section className="py-20 bg-slate-50">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Our Premium Services</h2>
+               <h2 className="text-4xl font-bold mb-4">Our Premium Services</h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 From interior design to painting, carpentry to electrical work — we provide comprehensive 
                 solutions to transform your space into something extraordinary.
@@ -183,8 +231,8 @@ export default function Home() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-rose-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
                   </svg>
                 </div>
@@ -199,14 +247,14 @@ export default function Home() {
                   <li>• Custom Furniture Design</li>
                   <li>• Color Scheme & Material Selection</li>
                 </ul>
-                <a href="/services/interior-design" className="inline-block px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors">
+                <a href="/services/interior-design" className="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
                   Learn More
                 </a>
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
                   </svg>
                 </div>
@@ -221,14 +269,14 @@ export default function Home() {
                   <li>• Color Consultation</li>
                   <li>• Premium Quality Materials</li>
                 </ul>
-                <a href="/services/painting" className="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-colors">
+                <a href="/services/painting" className="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
                   Learn More
                 </a>
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                 </div>
@@ -243,7 +291,7 @@ export default function Home() {
                   <li>• Waterproofing</li>
                   <li>• False Ceiling & POP</li>
                 </ul>
-                <a href="/services/renovation" className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors">
+                <a href="/services/renovation" className="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
                   Learn More
                 </a>
               </div>
@@ -263,17 +311,17 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {process.map((step, index) => (
-                <div key={index} className="text-center relative">
-                  <div className="w-20 h-20 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                <div key={index} className="group text-center relative bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 flex items-center justify-center shadow">
                     {step.icon}
                   </div>
-                  <div className="text-rose-600 font-bold text-lg mb-3">{step.step}</div>
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-slate-600">{step.description}</p>
-                  
-                  {/* Connector line */}
+                  <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-sm mb-3">
+                    Step {step.step}
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-700 transition-colors">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
                   {index < process.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-slate-200 transform translate-x-4"></div>
+                    <div className="hidden lg:block absolute top-1/2 right-[-16px] w-8 h-0.5 bg-gradient-to-r from-slate-200 to-transparent"></div>
                   )}
                 </div>
               ))}
@@ -293,7 +341,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {featuredProjects.map((project) => (
-                <div key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <Link href={`/projects/${project.id}`} key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block group">
                   <div className="relative h-64">
                     <img 
                       src={project.image} 
@@ -301,22 +349,22 @@ export default function Home() {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
                         {project.category}
                       </span>
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">{project.title}</h3>
                     <div className="flex justify-between text-sm text-slate-600 mb-4">
                       <span>Area: {project.area}</span>
                       <span>Duration: {project.duration}</span>
                     </div>
-                    <a href="/services/interior-design" className="inline-block px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors">
+                    <span className="inline-block px-4 py-2 bg-slate-100 text-slate-700 rounded-lg font-semibold">
                       View Details
-                    </a>
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -335,7 +383,7 @@ export default function Home() {
             {/* Featured Projects Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {featuredProjects.map((project) => (
-                <div key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <Link href={`/projects/${project.id}`} key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block group">
                   <div className="relative h-64">
                     <img 
                       src={project.image} 
@@ -343,20 +391,20 @@ export default function Home() {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
                         {project.category}
                       </span>
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">{project.title}</h3>
                     <div className="flex justify-between text-sm text-slate-600 mb-4">
                       <span>{project.area}</span>
                       <span>{project.duration}</span>
                     </div>
                     <p className="text-slate-600 text-sm">Premium interior design and renovation work</p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -364,7 +412,7 @@ export default function Home() {
             <div className="text-center">
               <Link 
                 href="/projects" 
-                className="inline-block px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold text-lg transition-colors"
+                className="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-lg transition-colors"
               >
                 View All Projects
               </Link>
@@ -378,68 +426,63 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Don't just take our word for it. Here's what our satisfied clients have to say about their experience
+                Real experiences from happy homeowners and partners
               </p>
             </div>
 
-            {/* Testimonials Slider */}
-            <div className="relative max-w-4xl mx-auto">
-              {/* Navigation Arrows */}
+            {/* Horizontal Testimonials */}
+            <div className="relative">
+              {/* Edge fades */}
+              {canScrollLeft && (
+                <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-slate-50 to-transparent rounded-l-2xl" />
+              )}
+              {canScrollRight && (
+                <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-slate-50 to-transparent rounded-r-2xl" />
+              )}
+
+              {/* Nav arrows */}
               <button
-                onClick={() => setCurrentTestimonial(current => current === 0 ? testimonials.length - 1 : current - 1)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-rose-50 transition-colors"
+                aria-label="Scroll testimonials left"
+                onClick={() => scrollTestimonials('left')}
+                className={`hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full items-center justify-center shadow-md transition-all ${
+                  canScrollLeft ? 'bg-white hover:bg-slate-100 text-slate-700' : 'bg-white/60 text-slate-400 pointer-events-none'
+                }`}
               >
-                <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
               </button>
-              
               <button
-                onClick={() => setCurrentTestimonial(current => current === testimonials.length - 1 ? 0 : current + 1)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-rose-50 transition-colors"
+                aria-label="Scroll testimonials right"
+                onClick={() => scrollTestimonials('right')}
+                className={`hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full items-center justify-center shadow-md transition-all ${
+                  canScrollRight ? 'bg-white hover:bg-slate-100 text-slate-700' : 'bg-white/60 text-slate-400 pointer-events-none'
+                }`}
               >
-                <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
               </button>
 
-              {/* Testimonial Card */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg mx-16">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
-                    <img 
-                      src={testimonials[currentTestimonial].image} 
-                      alt={testimonials[currentTestimonial].name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-slate-900">{testimonials[currentTestimonial].name}</h4>
-                    <p className="text-sm text-slate-600">{testimonials[currentTestimonial].role}</p>
-                    <div className="flex items-center gap-1 mt-1">
-                      {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
+              <div ref={testimonialsContainerRef} className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mb-4 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent scroll-smooth">
+                {testimonials.map((t) => (
+                  <div key={t.id} className="snap-start shrink-0 w-[320px] md:w-[360px] bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-14 h-14 rounded-full overflow-hidden">
+                        <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-slate-900">{t.name}</h4>
+                        <p className="text-xs text-slate-500">{t.role}</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {[...Array(t.rating)].map((_, i) => (
+                            <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
                     </div>
+                    <blockquote className="text-slate-700 text-sm leading-relaxed">
+                      “{t.text}”
+                    </blockquote>
                   </div>
-                </div>
-                <blockquote className="text-slate-700 leading-relaxed text-lg">
-                  "{testimonials[currentTestimonial].text}"
-                </blockquote>
-              </div>
-              
-              {/* Dots Indicator */}
-              <div className="flex justify-center gap-2 mt-8">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentTestimonial(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentTestimonial ? 'bg-rose-600' : 'bg-slate-300'
-                    }`}
-                  ></button>
                 ))}
               </div>
             </div>
