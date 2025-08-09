@@ -9,7 +9,7 @@ export default function Services() {
       id: 1,
       title: 'Interior Design',
       description: 'Complete interior design solutions from concept to execution',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/01-interior-design-hero.webp',
       features: [
         'Space Planning & Layout Design',
         '3D Visualizations & Renderings',
@@ -24,7 +24,7 @@ export default function Services() {
       id: 2,
       title: 'Interior Painting',
       description: 'Professional interior painting with premium quality materials',
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/02-interior-painting-hero.webp',
       features: [
         'Wall Preparation & Priming',
         'Premium Quality Paints',
@@ -39,7 +39,7 @@ export default function Services() {
       id: 3,
       title: 'Exterior Painting',
       description: 'Durable exterior painting solutions for all weather conditions',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/03-exterior-painting-hero.webp',
       features: [
         'Weather-Resistant Paints',
         'Surface Preparation & Repair',
@@ -54,7 +54,7 @@ export default function Services() {
       id: 4,
       title: 'Carpentry Service',
       description: 'Custom woodwork and furniture solutions for your home',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/04-carpentry-service-hero.webp',
       features: [
         'Custom Furniture Design',
         'Kitchen Cabinets & Wardrobes',
@@ -69,7 +69,7 @@ export default function Services() {
       id: 5,
       title: 'POP and False Ceiling',
       description: 'Modern false ceiling designs and POP work for contemporary homes',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/05-false-ceiling-pop-hero.webp',
       features: [
         'Custom False Ceiling Designs',
         'POP (Plaster of Paris) Work',
@@ -84,7 +84,7 @@ export default function Services() {
       id: 6,
       title: 'Home Electrician Service',
       description: 'Complete electrical solutions for residential and commercial spaces',
-      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/06-home-electrician-service-hero.webp',
       features: [
         'Electrical Wiring & Installation',
         'Switch & Socket Installation',
@@ -99,7 +99,7 @@ export default function Services() {
       id: 7,
       title: 'Waterproofing',
       description: 'Comprehensive waterproofing solutions for roofs and terraces',
-      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/07-waterproofing-hero.webp',
       features: [
         'Terrace Waterproofing',
         'Bathroom Waterproofing',
@@ -114,7 +114,7 @@ export default function Services() {
       id: 8,
       title: 'Home Renovation',
       description: 'Complete home renovation and remodeling services',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/services/08-home-renovation-hero.webp',
       features: [
         'Complete Home Makeover',
         'Kitchen Renovation',
@@ -159,11 +159,6 @@ export default function Services() {
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 right-4">
-                      <span className="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-semibold">
-                        {service.price}
-                      </span>
-                    </div>
                   </div>
                   <div className="p-8">
                     <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
