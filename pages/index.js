@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Ruler, PaintRoller, Home as HomeIcon, MessageSquare, Pencil, Hammer, Truck } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -127,43 +128,25 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
       step: '01',
       title: 'Consultation',
       description: 'Free initial consultation to understand your vision and requirements',
-      icon: (
-        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4-.8L3 20l.8-4A8.963 8.963 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      )
+      icon: (<MessageSquare className="w-10 h-10 text-indigo-600" aria-hidden />)
     },
     {
       step: '02',
       title: 'Design & Planning',
       description: 'Detailed design planning with 3D visualizations and material selection',
-      icon: (
-        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v8m4-4H8" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7" />
-        </svg>
-      )
+      icon: (<Pencil className="w-10 h-10 text-indigo-600" aria-hidden />)
     },
     {
       step: '03',
       title: 'Execution',
       description: 'Professional execution with quality materials and expert craftsmanship',
-      icon: (
-        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 21v-4a2 2 0 012-2h3l3-3 5 5-3 3v3a2 2 0 01-2 2H6a2 2 0 01-2-2z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.5 6.5l3 3" />
-        </svg>
-      )
+      icon: (<Hammer className="w-10 h-10 text-indigo-600" aria-hidden />)
     },
     {
       step: '04',
       title: 'Delivery',
       description: 'Timely project completion with quality assurance and warranty',
-      icon: (
-        <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      icon: (<Truck className="w-10 h-10 text-indigo-600" aria-hidden />)
     }
   ]
 
@@ -333,10 +316,8 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-                  </svg>
+                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6 text-indigo-600">
+                  <Ruler className="w-8 h-8" aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Interior Design</h3>
                 <p className="text-slate-600 mb-6">
@@ -355,10 +336,8 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-                  </svg>
+                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6 text-indigo-600">
+                  <PaintRoller className="w-8 h-8" aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Professional Painting</h3>
                 <p className="text-slate-600 mb-6">
@@ -377,10 +356,8 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
+                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6 text-indigo-600">
+                  <HomeIcon className="w-8 h-8" aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Complete Renovation</h3>
                 <p className="text-slate-600 mb-6">
