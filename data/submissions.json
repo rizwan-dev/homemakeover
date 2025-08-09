@@ -75,5 +75,43 @@
       "service": "Interior Design",
       "message": ""
     }
+  },
+  {
+    "id": "1754744405018",
+    "type": "survey",
+    "timestamp": "2025-08-09T13:00:05.018Z",
+    "data": {
+      "firstName": "Harmeet",
+      "lastName": "Kaur",
+      "phone": "+918830721334",
+      "email": "riztech.dev@gmail.com",
+      "address": "A1 904, Downtown Cherryl, Kharadi",
+      "propertyType": "house",
+      "services": [
+        "Carpentry Service"
+      ],
+      "timeline": "planning",
+      "budget": "1l-2l",
+      "details": "Testing"
+    }
+  },
+  {
+    "id": "1754744922777",
+    "type": "survey",
+    "timestamp": "2025-08-09T13:08:42.777Z",
+    "data": {
+      "firstName": "Harsimrat",
+      "lastName": "Kaur",
+      "phone": "+918830721334",
+      "email": "riztech.dev@gmail.com",
+      "address": "A1 904, Downtown Cherryl, Kharadi",
+      "propertyType": "apartment",
+      "services": [
+        "Interior Painting"
+      ],
+      "timeline": "planning",
+      "budget": "50k-1l",
+      "details": "Testing"
+    }
   }
 ]
