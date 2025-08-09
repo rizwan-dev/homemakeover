@@ -42,6 +42,18 @@ export default function Header() {
             >
               +91 9031263531
             </a>
+            <div className="flex items-center gap-3">
+              <a href="https://www.instagram.com/homesmakeover/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-600 hover:text-indigo-600">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2A2.8 2.8 0 1014.8 12 2.8 2.8 0 0012 9.2zM17.8 6.2a1 1 0 110 2 1 1 0 010-2z"/>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61578062693960" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-slate-600 hover:text-indigo-600">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0022 12z"/>
+                </svg>
+              </a>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -80,6 +92,18 @@ export default function Header() {
               >
                 +91 9031263531
               </a>
+                <div className="flex items-center gap-4 pt-2">
+                  <a href="https://www.instagram.com/homesmakeover/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-600 hover:text-indigo-600">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2A2.8 2.8 0 1014.8 12 2.8 2.8 0 0012 9.2zM17.8 6.2a1 1 0 110 2 1 1 0 010-2z"/>
+                    </svg>
+                  </a>
+                  <a href="https://www.facebook.com/profile.php?id=61578062693960" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-slate-600 hover:text-indigo-600">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0022 12z"/>
+                    </svg>
+                  </a>
+                </div>
             </nav>
           </div>
         )}

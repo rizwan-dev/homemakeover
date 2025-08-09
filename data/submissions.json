@@ -62,5 +62,18 @@
       "service": "Interior Painting",
       "message": ""
     }
+  },
+  {
+    "id": "1754726683683",
+    "type": "contact",
+    "timestamp": "2025-08-09T08:04:43.683Z",
+    "data": {
+      "firstName": "Rizwanul",
+      "lastName": "Haque",
+      "email": "riztech.dev@gmail.com",
+      "phone": "08830721334",
+      "service": "Interior Design",
+      "message": ""
+    }
   }
 ]
