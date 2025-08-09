@@ -131,8 +131,6 @@ export default function AdminLogin() {
                 : 'Login'}
           </button>
         </form>
-
-        <p className="text-xs text-slate-500 mt-4">Demo credentials: imranadmin / homeinterior@312</p>
       </div>
     </main>
   )
