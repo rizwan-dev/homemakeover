@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { sendSubmissionEmail } from '../../lib/email'
+import { insertSubmission } from '../../lib/db'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -23,6 +24,13 @@ export default async function handler(req, res) {
         service,
         message
       }
+    }
+
+    // Prefer database storage when configured
+    try {
+      await insertSubmission(submission)
+    } catch (dbErr) {
+      console.warn('[contact] DB insert failed, falling back to file:', dbErr?.message || dbErr)
     }
 
     // Best-effort local storage (may not be writable in some serverless/prod envs)
