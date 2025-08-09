@@ -1,0 +1,524 @@
+import Head from 'next/head'
+import { useState } from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import AutoSlider from '../components/AutoSlider'
+import Link from 'next/link'
+
+export default function Home() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+
+  const testimonials = [
+    {
+      id: 1,
+      name: 'Priya Sharma',
+      role: 'Homeowner, Kharadi',
+      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'Home Makeover transformed our living room into a stunning space. The team was professional, punctual, and delivered exactly what we envisioned. Highly recommended!'
+    },
+    {
+      id: 2,
+      name: 'Rajesh Patel',
+      role: 'Business Owner, Viman Nagar',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'Excellent painting work for our office. The quality is outstanding and they completed the project on time. Will definitely hire them again for future projects.'
+    },
+    {
+      id: 3,
+      name: 'Anjali Deshmukh',
+      role: 'Interior Designer, Wagholi',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'As a professional designer, I\'m very particular about quality. Home Makeover exceeded my expectations with their attention to detail and craftsmanship.'
+    },
+    {
+      id: 4,
+      name: 'Suresh Kumar',
+      role: 'Property Developer, Kalyani Nagar',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'We hired Home Makeover for multiple properties. Their consistency, quality, and professional approach make them our go-to choice for all interior work.'
+    },
+    {
+      id: 5,
+      name: 'Meera Iyer',
+      role: 'Homeowner, Lohegaon',
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'The waterproofing work on our terrace is perfect. No more leaks during monsoon! The team was thorough and the work quality is exceptional.'
+    },
+    {
+      id: 6,
+      name: 'Vikram Singh',
+      role: 'Restaurant Owner, Kesnand',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'Home Makeover did an amazing job renovating our restaurant. The carpentry work and electrical installations are top-notch. Great value for money!'
+    },
+    {
+      id: 7,
+      name: 'Deepika Reddy',
+      role: 'Homeowner, Kharadi',
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'The false ceiling work in our living room is beautiful. The LED integration and design are exactly what we wanted. Professional team and excellent results.'
+    },
+    {
+      id: 8,
+      name: 'Arun Joshi',
+      role: 'IT Professional, Viman Nagar',
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
+      rating: 5,
+      text: 'Home Makeover\'s electrical work is outstanding. They installed smart lighting throughout our home with proper safety measures. Highly skilled team!'
+    }
+  ]
+
+  const stats = [
+    { number: '500+', label: 'Projects Completed' },
+    { number: '10+', label: 'Years Experience' },
+    { number: '100%', label: 'Client Satisfaction' },
+    { number: '50+', label: 'Team Members' }
+  ]
+
+  const process = [
+    {
+      step: '01',
+      title: 'Consultation',
+      description: 'Free initial consultation to understand your vision and requirements',
+      icon: '💬'
+    },
+    {
+      step: '02',
+      title: 'Design & Planning',
+      description: 'Detailed design planning with 3D visualizations and material selection',
+      icon: '📐'
+    },
+    {
+      step: '03',
+      title: 'Execution',
+      description: 'Professional execution with quality materials and expert craftsmanship',
+      icon: '🔨'
+    },
+    {
+      step: '04',
+      title: 'Delivery',
+      description: 'Timely project completion with quality assurance and warranty',
+      icon: '✅'
+    }
+  ]
+
+  const featuredProjects = [
+    {
+      id: 1,
+      title: 'Luxury Villa Interior',
+      category: 'Interior Design',
+      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
+      area: '3,500 sq ft',
+      duration: '3 months'
+    },
+    {
+      id: 2,
+      title: 'Modern Office Space',
+      category: 'Commercial Interior',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
+      area: '2,000 sq ft',
+      duration: '2 months'
+    },
+    {
+      id: 3,
+      title: 'Premium Apartment',
+      category: 'Residential Interior',
+      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
+      area: '1,200 sq ft',
+      duration: '1.5 months'
+    }
+  ]
+
+
+
+  return (
+    <>
+      <Head>
+        <title>Home Makeover — Professional Interior Design & Painting Services in Pune</title>
+        <meta name="description" content="Transform your home with professional interior design, painting, carpentry, electrical, and waterproofing services in Pune. Free consultation and quotes." />
+        <meta name="keywords" content="interior design, painting, Pune, Kharadi, Viman Nagar, Lohegaon, Magarpatta, Kalyani Nagar, home renovation, interior designer, painter" />
+        <meta property="og:title" content="Home Makeover — Professional Interior Design & Painting Services in Pune" />
+        <meta property="og:description" content="Transform your home with professional interior design, painting, carpentry, electrical, and waterproofing services in Pune. Free consultation and quotes." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://homemakeover.com" />
+        <link rel="canonical" href="https://homemakeover.com" />
+      </Head>
+      <Header />
+      
+      <main className="min-h-screen">
+        {/* Auto Slider Hero Section */}
+        <AutoSlider />
+
+        {/* Statistics Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-rose-600 mb-2">{stat.number}</div>
+                  <div className="text-slate-600 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="py-20 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Our Premium Services</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                From interior design to painting, carpentry to electrical work — we provide comprehensive 
+                solutions to transform your space into something extraordinary.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-rose-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Interior Design</h3>
+                <p className="text-slate-600 mb-6">
+                  Complete interior design solutions from concept to execution. We create beautiful, 
+                  functional spaces that reflect your style and lifestyle.
+                </p>
+                <ul className="text-sm text-slate-600 space-y-2 mb-6">
+                  <li>• Space Planning & Layout Design</li>
+                  <li>• 3D Visualizations & Renderings</li>
+                  <li>• Custom Furniture Design</li>
+                  <li>• Color Scheme & Material Selection</li>
+                </ul>
+                <a href="/services/interior-design" className="inline-block px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors">
+                  Learn More
+                </a>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Professional Painting</h3>
+                <p className="text-slate-600 mb-6">
+                  Expert interior and exterior painting services with premium quality materials. 
+                  We deliver flawless finishes that last.
+                </p>
+                <ul className="text-sm text-slate-600 space-y-2 mb-6">
+                  <li>• Interior & Exterior Painting</li>
+                  <li>• Texture & Special Effects</li>
+                  <li>• Color Consultation</li>
+                  <li>• Premium Quality Materials</li>
+                </ul>
+                <a href="/services/painting" className="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-colors">
+                  Learn More
+                </a>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Complete Renovation</h3>
+                <p className="text-slate-600 mb-6">
+                  Full home renovation services including carpentry, electrical, waterproofing, 
+                  and false ceiling work. One-stop solution for all your needs.
+                </p>
+                <ul className="text-sm text-slate-600 space-y-2 mb-6">
+                  <li>• Carpentry & Furniture</li>
+                  <li>• Electrical Work</li>
+                  <li>• Waterproofing</li>
+                  <li>• False Ceiling & POP</li>
+                </ul>
+                <a href="/services/renovation" className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Our Process</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                We follow a systematic approach to ensure your project is completed on time and within budget
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {process.map((step, index) => (
+                <div key={index} className="text-center relative">
+                  <div className="w-20 h-20 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                    {step.icon}
+                  </div>
+                  <div className="text-rose-600 font-bold text-lg mb-3">{step.step}</div>
+                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-slate-600">{step.description}</p>
+                  
+                  {/* Connector line */}
+                  {index < process.length - 1 && (
+                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-slate-200 transform translate-x-4"></div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Projects */}
+        <section className="py-20 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Explore some of our most impressive projects that showcase our expertise and creativity
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {featuredProjects.map((project) => (
+                <div key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="relative h-64">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-medium">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <div className="flex justify-between text-sm text-slate-600 mb-4">
+                      <span>Area: {project.area}</span>
+                      <span>Duration: {project.duration}</span>
+                    </div>
+                    <a href="/services/interior-design" className="inline-block px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors">
+                      View Details
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Projects Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Explore some of our most impressive projects that showcase our expertise and creativity
+              </p>
+            </div>
+
+            {/* Featured Projects Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {featuredProjects.map((project) => (
+                <div key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="relative h-64">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-medium">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <div className="flex justify-between text-sm text-slate-600 mb-4">
+                      <span>{project.area}</span>
+                      <span>{project.duration}</span>
+                    </div>
+                    <p className="text-slate-600 text-sm">Premium interior design and renovation work</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* View All Projects CTA */}
+            <div className="text-center">
+              <Link 
+                href="/projects" 
+                className="inline-block px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold text-lg transition-colors"
+              >
+                View All Projects
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Don't just take our word for it. Here's what our satisfied clients have to say about their experience
+              </p>
+            </div>
+
+            {/* Testimonials Slider */}
+            <div className="relative max-w-4xl mx-auto">
+              {/* Navigation Arrows */}
+              <button
+                onClick={() => setCurrentTestimonial(current => current === 0 ? testimonials.length - 1 : current - 1)}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-rose-50 transition-colors"
+              >
+                <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button
+                onClick={() => setCurrentTestimonial(current => current === testimonials.length - 1 ? 0 : current + 1)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-rose-50 transition-colors"
+              >
+                <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Testimonial Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-lg mx-16">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                    <img 
+                      src={testimonials[currentTestimonial].image} 
+                      alt={testimonials[currentTestimonial].name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-slate-900">{testimonials[currentTestimonial].name}</h4>
+                    <p className="text-sm text-slate-600">{testimonials[currentTestimonial].role}</p>
+                    <div className="flex items-center gap-1 mt-1">
+                      {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <blockquote className="text-slate-700 leading-relaxed text-lg">
+                  "{testimonials[currentTestimonial].text}"
+                </blockquote>
+              </div>
+              
+              {/* Dots Indicator */}
+              <div className="flex justify-center gap-2 mt-8">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentTestimonial ? 'bg-rose-600' : 'bg-slate-300'
+                    }`}
+                  ></button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Why Choose Home Makeover?</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                We combine expertise, quality materials, and attention to detail to deliver exceptional results
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-rose-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Quality Materials</h3>
+                <p className="text-slate-600">We use only premium quality materials and equipment for lasting results</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Expert Team</h3>
+                <p className="text-slate-600">Our skilled professionals have years of experience in all services</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Warranty Coverage</h3>
+                <p className="text-slate-600">All our work comes with comprehensive warranty for your peace of mind</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Customer Support</h3>
+                <p className="text-slate-600">Dedicated support team available throughout your project journey</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-rose-600 to-rose-700 text-white">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
+            <p className="text-xl mb-8 opacity-90">
+              Get started with a free consultation and professional assessment of your project
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/survey" className="inline-block px-8 py-4 bg-white text-rose-600 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors">
+                Get Free Quote
+              </a>
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-rose-600 transition-colors">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
+}
