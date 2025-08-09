@@ -5,11 +5,12 @@ import Footer from '../components/Footer'
 import AutoSlider from '../components/AutoSlider'
 import Link from 'next/link'
 
-export default function Home({ reviewImages = [] }) {
+export default function Home({ reviewImages = [], sliderImages = [] }) {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const testimonialsContainerRef = useRef(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const VISIBLE_PROJECTS = 6
 
   const updateScrollButtons = () => {
     const el = testimonialsContainerRef.current
@@ -171,7 +172,7 @@ export default function Home({ reviewImages = [] }) {
       id: 1,
       title: 'Luxury Villa Interior',
       category: 'Interior Design',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/02-viman-nagar-luxury-villa-interior-main.webp',
       area: '3,500 sq ft',
       duration: '3 months'
     },
@@ -179,7 +180,7 @@ export default function Home({ reviewImages = [] }) {
       id: 2,
       title: 'Modern Office Space',
       category: 'Commercial Interior',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/04-kalyani-nagar-modern-office-interior-main.webp',
       area: '2,000 sq ft',
       duration: '2 months'
     },
@@ -187,9 +188,57 @@ export default function Home({ reviewImages = [] }) {
       id: 3,
       title: 'Premium Apartment',
       category: 'Residential Interior',
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/01-forest-county-kharadi-2bhk-interior-main.webp',
       area: '1,200 sq ft',
       duration: '1.5 months'
+    },
+    {
+      id: 4,
+      title: 'Home Renovation — Kharadi',
+      category: 'Renovation',
+      image: '/images/project/09-vtp-pegasus-kharadi-premium-interior-main.webp',
+      area: '1020 sq ft',
+      duration: '5 weeks'
+    },
+    {
+      id: 5,
+      title: 'Exterior Painting — Viman Nagar',
+      category: 'Painting',
+      image: '/images/project/03-lohegaon-exterior-house-painting-main.webp',
+      area: '2,600 sq ft',
+      duration: '3 weeks'
+    },
+    {
+      id: 6,
+      title: 'False Ceiling & Lighting',
+      category: 'Interior',
+      image: '/images/project/06-kesnand-false-ceiling-installation-main.webp',
+      area: '1,000 sq ft',
+      duration: '4 weeks'
+    },
+    {
+      id: 7,
+      title: 'Boutique Store Fit-out',
+      category: 'Commercial Interior',
+      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
+      area: '900 sq ft',
+      duration: '6 weeks'
+    },
+    {
+      id: 8,
+      title: 'Luxury Bedroom Suite',
+      category: 'Interior Design',
+      image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1400&auto=format&fit=crop',
+      area: '650 sq ft',
+      duration: '3 weeks'
+    },
+    {
+      id: 9,
+      title: 'Waterproofing & Terrace Garden',
+      category: 'Waterproofing',
+      image: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f5?q=80&w=1400&auto=format&fit=crop',
+      area: '1,400 sq ft',
+      duration: '2 weeks'
     }
   ]
 
@@ -206,12 +255,56 @@ export default function Home({ reviewImages = [] }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://homemakeover.com" />
         <link rel="canonical" href="https://homemakeover.com" />
+        {/* FAQ Schema for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'Do you provide a free site survey and quote?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Yes. We provide a free site survey and a detailed quote with no obligation.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How long does a typical interior project take?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Timelines vary by scope. Most 2–3 BHK interiors complete in 4–10 weeks.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Do you offer warranty on painting and waterproofing?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Yes. Painting up to 2 years, waterproofing as per system warranty.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Which areas in Pune do you serve?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'We serve Kharadi, Viman Nagar, Lohegaon, Kalyani Nagar, Wagholi and nearby areas.'
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </Head>
       <Header />
       
       <main className="min-h-screen">
         {/* Auto Slider Hero Section */}
-        <AutoSlider />
+        <AutoSlider sliderImages={sliderImages} />
 
         {/* Statistics Section */}
         <section className="py-16 bg-white">
@@ -349,7 +442,7 @@ export default function Home({ reviewImages = [] }) {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {featuredProjects.map((project) => (
+              {featuredProjects.slice(0, VISIBLE_PROJECTS).map((project) => (
                 <Link href={`/projects/${project.id}`} key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block group">
                   <div className="relative h-64">
                     <img 
@@ -375,6 +468,15 @@ export default function Home({ reviewImages = [] }) {
                   </div>
                 </Link>
               ))}
+              <div className="md:col-span-3 text-center mt-4">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 rounded-lg text-slate-700 hover:border-indigo-600 hover:text-indigo-600 font-semibold"
+                >
+                  View All Projects
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -415,6 +517,54 @@ export default function Home({ reviewImages = [] }) {
                   <li>• Electrical & carpentry workmanship</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-lg text-slate-600">Answers to common questions about our services in Pune</p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-4">
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">Do you provide a free site survey?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Yes, we provide a free site survey and a detailed, no-obligation quote.</div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">What locations do you serve in Pune?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Kharadi, Viman Nagar, Lohegaon, Kalyani Nagar, Wagholi and nearby areas.</div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">Do you offer warranty?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Yes. Painting up to 2 years; waterproofing as per system; workmanship warranty on interiors.</div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">How soon can you start after confirmation?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Usually within 3–7 days depending on scope and material readiness.</div>
+              </details>
             </div>
           </div>
         </section>
@@ -566,21 +716,35 @@ export default function Home({ reviewImages = [] }) {
 }
 
 export async function getStaticProps() {
-  // Dynamically read available images from public/images/review
   const fs = await import('fs')
   const path = await import('path')
-  const dir = path.join(process.cwd(), 'public', 'images', 'review')
-  let files = []
+
+  // Reviews
+  const reviewDir = path.join(process.cwd(), 'public', 'images', 'review')
+  let reviewFiles = []
   try {
-    files = fs.readdirSync(dir)
+    reviewFiles = fs.readdirSync(reviewDir)
       .filter((f) => /\.(webp|jpg|jpeg|png)$/i.test(f))
       .sort()
   } catch (e) {
     console.warn('[home] review images directory not readable:', e?.message || e)
   }
+
+  // Slider
+  const sliderDir = path.join(process.cwd(), 'public', 'images', 'slider')
+  let sliderFiles = []
+  try {
+    sliderFiles = fs.readdirSync(sliderDir)
+      .filter((f) => /\.(webp|jpg|jpeg|png)$/i.test(f))
+      .sort()
+  } catch (e) {
+    console.warn('[home] slider images directory not readable:', e?.message || e)
+  }
+
   return {
     props: {
-      reviewImages: files,
+      reviewImages: reviewFiles,
+      sliderImages: sliderFiles,
     },
   }
 }

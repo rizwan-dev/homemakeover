@@ -13,16 +13,17 @@ export default function Projects() {
       title: 'Home Interior Design in 2 BHK - Forest County Kharadi',
       category: 'interior',
       location: 'Forest County, Kharadi, Pune',
+      society: 'Forest County',
       area: '1,200 sq ft',
-      duration: '2.5 months',
+      duration: '38 days',
       budget: '₹4.5 Lakhs',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/01-forest-county-kharadi-2bhk-interior-main.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop'
+        '/images/project/01-forest-county-kharadi-2bhk-interior-main.webp',
+        '/images/project/01-forest-county-kharadi-2bhk-interior-1.webp',
+        '/images/project/01-forest-county-kharadi-2bhk-interior-2.webp',
+        '/images/project/01-forest-county-kharadi-2bhk-interior-3.webp'
       ],
       description: 'Complete interior design transformation for a 2 BHK apartment in Forest County, Kharadi. This project included modern living room design, kitchen renovation, master bedroom makeover, and bathroom upgrades.',
       features: [
@@ -41,16 +42,17 @@ export default function Projects() {
       title: 'Luxury Villa Interior - Viman Nagar',
       category: 'interior',
       location: 'Viman Nagar, Pune',
+      society: 'Ganga Constella',
       area: '3,500 sq ft',
-      duration: '4 months',
+      duration: '45 days',
       budget: '₹12 Lakhs',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/02-viman-nagar-luxury-villa-interior-main.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop'
+        '/images/project/02-viman-nagar-luxury-villa-interior-main.webp',
+        '/images/project/02-viman-nagar-luxury-villa-interior-1.webp',
+        '/images/project/02-viman-nagar-luxury-villa-interior-2.webp',
+        '/images/project/02-viman-nagar-luxury-villa-interior-3.webp'
       ],
       description: 'Complete luxury villa interior design project featuring modern aesthetics with premium materials, custom furniture, and smart home integration.',
       features: [
@@ -69,16 +71,17 @@ export default function Projects() {
       title: 'Exterior House Painting - Lohegaon',
       category: 'painting',
       location: 'Lohegaon, Pune',
+      society: 'Lohegaon Heights',
       area: '2,800 sq ft',
-      duration: '3 weeks',
+      duration: '21 days',
       budget: '₹1.8 Lakhs',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/03-lohegaon-exterior-house-painting-main.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop'
+        '/images/project/03-lohegaon-exterior-house-painting-main.webp',
+        '/images/project/03-lohegaon-exterior-house-painting-1.webp',
+        '/images/project/03-lohegaon-exterior-house-painting-2.webp',
+        '/images/project/03-lohegaon-exterior-house-painting-3.webp'
       ],
       description: 'Complete exterior painting project with weather-resistant finishes, texture work, and waterproofing solutions for long-lasting protection.',
       features: [
@@ -97,16 +100,17 @@ export default function Projects() {
       title: 'Modern Office Space - Kalyani Nagar',
       category: 'interior',
       location: 'Kalyani Nagar, Pune',
+      society: 'Cerebrum IT Park',
       area: '2,000 sq ft',
-      duration: '2.5 months',
+      duration: '35 days',
       budget: '₹6.5 Lakhs',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/04-kalyani-nagar-modern-office-interior-main.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop'
+        '/images/project/04-kalyani-nagar-modern-office-interior-main.webp',
+        '/images/project/04-kalyani-nagar-modern-office-interior-1.webp',
+        '/images/project/04-kalyani-nagar-modern-office-interior-2.webp',
+        '/images/project/04-kalyani-nagar-modern-office-interior-3.webp'
       ],
       description: 'Contemporary office space design with open floor plan, meeting rooms, and modern amenities for a growing tech company.',
       features: [
@@ -125,16 +129,17 @@ export default function Projects() {
       title: 'Interior Wall Painting - Wagholi',
       category: 'painting',
       location: 'Wagholi, Pune',
+      society: 'Ivy Estate',
       area: '1,500 sq ft',
-      duration: '2 weeks',
+      duration: '14 days',
       budget: '₹95,000',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/05-wagholi-interior-wall-painting-main.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop'
+        '/images/project/05-wagholi-interior-wall-painting-main.webp',
+        '/images/project/05-wagholi-interior-wall-painting-1.webp',
+        '/images/project/05-wagholi-interior-wall-painting-2.webp',
+        '/images/project/05-wagholi-interior-wall-painting-3.webp'
       ],
       description: 'Premium interior painting project with texture work, special effects, and color consultation for a modern apartment.',
       features: [
@@ -153,16 +158,17 @@ export default function Projects() {
       title: 'False Ceiling Installation - Kesnand',
       category: 'interior',
       location: 'Kesnand, Pune',
+      society: 'Kesnand Greens',
       area: '1,800 sq ft',
-      duration: '1 month',
+      duration: '30 days',
       budget: '₹2.2 Lakhs',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
+      image: '/images/project/06-kesnand-false-ceiling-installation-main.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop'
+        '/images/project/06-kesnand-false-ceiling-installation-main.webp',
+        '/images/project/06-kesnand-false-ceiling-installation-1.webp',
+        '/images/project/06-kesnand-false-ceiling-installation-2.webp',
+        '/images/project/06-kesnand-false-ceiling-installation-3.webp'
       ],
       description: 'Modern false ceiling installation with LED integration, acoustic panels, and contemporary design for a restaurant space.',
       features: [
@@ -175,6 +181,174 @@ export default function Projects() {
       ],
       client: 'Mr. Vikram Singh',
       completionDate: 'July 2023'
+    },
+    {
+      id: 7,
+      title: '2 BHK Interior Design - Nyati Elan, Wagholi',
+      category: 'interior',
+      location: 'Nyati Elan, Wagholi, Pune',
+      society: 'Nyati Elan',
+      area: '1,000 sq ft',
+      duration: '28 days',
+      budget: '₹3.8 Lakhs',
+      status: 'Completed',
+      image: '/images/project/07-nyati-elan-wagholi-2bhk-interior-main.webp',
+      gallery: [
+        '/images/project/07-nyati-elan-wagholi-2bhk-interior-main.webp',
+        '/images/project/07-nyati-elan-wagholi-2bhk-interior-1.webp',
+        '/images/project/07-nyati-elan-wagholi-2bhk-interior-2.webp'
+      ],
+      description: 'Full interior design for a 2 BHK at Nyati Elan featuring a cozy living room, modular kitchen, and smart storage in bedrooms.',
+      features: [
+        'Modular Kitchen',
+        'Custom TV Unit',
+        'Bedroom Wardrobes',
+        'Accent Lighting',
+        'Space Optimization',
+        'Premium Finishes'
+      ],
+      client: 'Mr. & Mrs. Kulkarni',
+      completionDate: 'January 2024'
+    },
+    {
+      id: 8,
+      title: '3 BHK Interior Makeover - Majestique Towers, Kharadi',
+      category: 'interior',
+      location: 'Majestique Towers, Kharadi, Pune',
+      society: 'Majestique Towers',
+      area: '1,400 sq ft',
+      duration: '32 days',
+      budget: '₹6.2 Lakhs',
+      status: 'Completed',
+      image: '/images/project/08-majestique-towers-kharadi-3bhk-makeover-main.webp',
+      gallery: [
+        '/images/project/08-majestique-towers-kharadi-3bhk-makeover-main.webp',
+        '/images/project/08-majestique-towers-kharadi-3bhk-makeover-1.webp',
+        '/images/project/08-majestique-towers-kharadi-3bhk-makeover-2.webp'
+      ],
+      description: 'Contemporary interior design for a 3 BHK including false ceiling, wall paneling, and custom furniture.',
+      features: [
+        'False Ceiling with Cove Lighting',
+        'Wall Paneling',
+        'Custom Furniture',
+        'Premium Veneers',
+        'Warm Lighting',
+        'Professional Installation'
+      ],
+      client: 'Ms. Rutuja Patil',
+      completionDate: 'February 2024'
+    },
+    {
+      id: 9,
+      title: 'Premium Interior - VTP Pegasus, Kharadi',
+      category: 'interior',
+      location: 'VTP Pegasus, Kharadi, Pune',
+      society: 'VTP Pegasus',
+      area: '1,250 sq ft',
+      duration: '34 days',
+      budget: '₹5.1 Lakhs',
+      status: 'Completed',
+      image: '/images/project/09-vtp-pegasus-kharadi-premium-interior-main.webp',
+      gallery: [
+        '/images/project/09-vtp-pegasus-kharadi-premium-interior-main.webp',
+        '/images/project/09-vtp-pegasus-kharadi-premium-interior-1.webp',
+        '/images/project/09-vtp-pegasus-kharadi-premium-interior-2.webp'
+      ],
+      description: 'Premium interior package with modular kitchen, wardrobe systems, and LED-integrated false ceiling for a modern finish.',
+      features: [
+        'LED-Integrated False Ceiling',
+        'Handleless Kitchen',
+        'Sliding Wardrobes',
+        'Quartz Countertop',
+        'Designer Wall Finishes',
+        'Soft-Close Hardware'
+      ],
+      client: 'Mr. Akash Deshpande',
+      completionDate: 'March 2024'
+    },
+    {
+      id: 10,
+      title: 'Interior Painting - Ivy Estate, Wagholi',
+      category: 'painting',
+      location: 'Ivy Estate, Wagholi, Pune',
+      society: 'Ivy Estate',
+      area: '1,100 sq ft',
+      duration: '10 days',
+      budget: '₹1.1 Lakhs',
+      status: 'Completed',
+      image: '/images/project/10-ivy-estate-wagholi-interior-painting-main.jpg',
+      gallery: [
+        '/images/project/10-ivy-estate-wagholi-interior-painting-main.jpg',
+        '/images/project/10-ivy-estate-wagholi-interior-painting-1.jpg',
+        '/images/project/10-ivy-estate-wagholi-interior-painting-2.jpg'
+      ],
+      description: 'Interior repainting with low-VOC premium paints, feature wall textures, and complete surface preparation.',
+      features: [
+        'Low-VOC Paints',
+        'Surface Preparation',
+        'Feature Wall Texture',
+        'Clean Site Handover',
+        'Color Consultation',
+        '1-Year Warranty'
+      ],
+      client: 'Mrs. Neha Jain',
+      completionDate: 'January 2024'
+    },
+    {
+      id: 11,
+      title: 'Exterior Painting - Rohan Abhilasha, Wagholi',
+      category: 'painting',
+      location: 'Rohan Abhilasha, Wagholi, Pune',
+      society: 'Rohan Abhilasha',
+      area: '3,000 sq ft',
+      duration: '21 days',
+      budget: '₹2.1 Lakhs',
+      status: 'Completed',
+      image: '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-main.webp',
+      gallery: [
+        '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-main.webp',
+        '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-1.webp',
+        '/images/project/11-rohan-abhilasha-wagholi-exterior-painting-2.webp'
+      ],
+      description: 'Weatherproof exterior painting with crack-filling, waterproofing, and anti-fungal coatings for long-term protection.',
+      features: [
+        'Crack Filling & Repair',
+        'Exterior Waterproofing',
+        'Anti-Fungal Coating',
+        'Weatherproof Paints',
+        'Quality Assurance',
+        '2-Year Warranty'
+      ],
+      client: 'Mr. Ravi Shinde',
+      completionDate: 'December 2023'
+    },
+    {
+      id: 12,
+      title: 'Compact 1.5 BHK Interior - Nyati Elan, Wagholi',
+      category: 'interior',
+      location: 'Nyati Elan, Wagholi, Pune',
+      society: 'Nyati Elan',
+      area: '800 sq ft',
+      duration: '25 days',
+      budget: '₹2.9 Lakhs',
+      status: 'Completed',
+      image: '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-main.webp',
+      gallery: [
+        '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-main.webp',
+        '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-1.webp',
+        '/images/project/12-nyati-elan-wagholi-1-5bhk-interior-2.webp'
+      ],
+      description: 'Smart interior for a compact home with space-saving furniture, bright tones, and practical storage.',
+      features: [
+        'Space-Saving Furniture',
+        'Bright Color Palette',
+        'Functional Storage',
+        'Compact Modular Kitchen',
+        'LED Lighting',
+        'Professional Execution'
+      ],
+      client: 'Mr. & Mrs. Pansare',
+      completionDate: 'April 2024'
     }
   ]
 
@@ -254,6 +428,13 @@ export default function Projects() {
                       src={project.image} 
                       alt={project.title}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.currentTarget
+                        target.onerror = null
+                        target.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(
+                          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient></defs><rect width="800" height="500" fill="url(#g)"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="24">Image unavailable</text></svg>'
+                        )}`
+                      }}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
@@ -275,6 +456,12 @@ export default function Projects() {
                         <span className="text-sm text-slate-500">Location</span>
                         <p className="font-semibold">{project.location}</p>
                       </div>
+                      {project.society && (
+                        <div className="mt-2">
+                          <span className="text-sm text-slate-500">Society</span>
+                          <p className="font-semibold">{project.society}</p>
+                        </div>
+                      )}
                     </div>
 
                     <div className="mb-6">
