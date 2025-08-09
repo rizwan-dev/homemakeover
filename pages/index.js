@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import AutoSlider from '../components/AutoSlider'
 import Link from 'next/link'
 
-export default function Home() {
+export default function Home({ reviewImages = [] }) {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const testimonialsContainerRef = useRef(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
@@ -38,72 +38,81 @@ export default function Home() {
     el.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' })
   }
 
-  const testimonials = [
+  // Reviews are hardcoded; remove Google fetch integration per request
+
+  const fileNameToName = (fileName) => {
+    const base = fileName.replace(/\.[^.]+$/, '') // remove extension
+    return base
+      .split('-')
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(' ')
+  }
+
+  const baseTestimonials = [
     {
       id: 1,
-      name: 'Priya Sharma',
-      role: 'Homeowner, Kharadi',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=400&auto=format&fit=crop',
+      role: 'IT Professional, Kharadi',
       rating: 5,
       text: 'Home Makeover transformed our living room into a stunning space. The team was professional, punctual, and delivered exactly what we envisioned. Highly recommended!'
     },
     {
       id: 2,
-      name: 'Rajesh Patel',
-      role: 'Business Owner, Viman Nagar',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+      role: 'IT Professional, Katraj',
       rating: 5,
       text: 'Excellent painting work for our office. The quality is outstanding and they completed the project on time. Will definitely hire them again for future projects.'
     },
     {
       id: 3,
-      name: 'Anjali Deshmukh',
-      role: 'Interior Designer, Wagholi',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop',
+      role: 'IT Professional, Kharadi',
       rating: 5,
       text: 'As a professional designer, I\'m very particular about quality. Home Makeover exceeded my expectations with their attention to detail and craftsmanship.'
     },
     {
       id: 4,
-      name: 'Suresh Kumar',
-      role: 'Property Developer, Kalyani Nagar',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop',
+      role: 'Property Developer, Kharadi',
       rating: 5,
       text: 'We hired Home Makeover for multiple properties. Their consistency, quality, and professional approach make them our go-to choice for all interior work.'
     },
     {
       id: 5,
-      name: 'Meera Iyer',
       role: 'Homeowner, Lohegaon',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop',
       rating: 5,
       text: 'The waterproofing work on our terrace is perfect. No more leaks during monsoon! The team was thorough and the work quality is exceptional.'
     },
     {
       id: 6,
-      name: 'Vikram Singh',
       role: 'Restaurant Owner, Kesnand',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
       rating: 5,
       text: 'Home Makeover did an amazing job renovating our restaurant. The carpentry work and electrical installations are top-notch. Great value for money!'
     },
     {
       id: 7,
-      name: 'Deepika Reddy',
       role: 'Homeowner, Kharadi',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop',
       rating: 5,
       text: 'The false ceiling work in our living room is beautiful. The LED integration and design are exactly what we wanted. Professional team and excellent results.'
     },
     {
       id: 8,
-      name: 'Arun Joshi',
-      role: 'IT Professional, Viman Nagar',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
+      role: 'IT Professional, Wagholi',
       rating: 5,
       text: 'Home Makeover\'s electrical work is outstanding. They installed smart lighting throughout our home with proper safety measures. Highly skilled team!'
     }
   ]
+
+  const testimonials = reviewImages.length
+    ? baseTestimonials.map((t, idx) => {
+        const file = reviewImages[idx] || reviewImages[0]
+        return {
+          ...t,
+          name: fileNameToName(file),
+          image: `/images/review/${file}`
+        }
+      })
+    : baseTestimonials.map((t, idx) => ({
+        ...t,
+        name: (t.role && String(t.role).split(',')[0]) || `Client ${idx + 1}`,
+        image: `https://i.pravatar.cc/100?u=${idx + 1}`
+      }))
 
   const stats = [
     { number: '500+', label: 'Projects Completed' },
@@ -370,52 +379,42 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Projects Section */}
+        {/* Capabilities & Guarantees Section */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Explore some of our most impressive projects that showcase our expertise and creativity
-              </p>
+              <h2 className="text-4xl font-bold mb-4">Capabilities & Guarantees</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">What sets us apart as a leading interior design and painting company in Pune</p>
             </div>
 
-            {/* Featured Projects Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {featuredProjects.map((project) => (
-                <Link href={`/projects/${project.id}`} key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block group">
-                  <div className="relative h-64">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">{project.title}</h3>
-                    <div className="flex justify-between text-sm text-slate-600 mb-4">
-                      <span>{project.area}</span>
-                      <span>{project.duration}</span>
-                    </div>
-                    <p className="text-slate-600 text-sm">Premium interior design and renovation work</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* View All Projects CTA */}
-            <div className="text-center">
-              <Link 
-                href="/projects" 
-                className="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-lg transition-colors"
-              >
-                View All Projects
-              </Link>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-xl font-bold mb-2">Design to Delivery</h3>
+                <p className="text-slate-600 mb-4">End-to-end execution with project management, quality checks, and regular updates</p>
+                <ul className="text-slate-600 space-y-2 text-sm">
+                  <li>• Dedicated project manager</li>
+                  <li>• Daily progress tracking</li>
+                  <li>• Quality checklist for every stage</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-xl font-bold mb-2">Assured Timelines</h3>
+                <p className="text-slate-600 mb-4">Realistic schedules with milestone commitments and on-time handover</p>
+                <ul className="text-slate-600 space-y-2 text-sm">
+                  <li>• Planned material readiness</li>
+                  <li>• Weekly milestone reviews</li>
+                  <li>• Escalation support</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-xl font-bold mb-2">Trusted Warranty</h3>
+                <p className="text-slate-600 mb-4">Warranty on workmanship and select materials with post-service support</p>
+                <ul className="text-slate-600 space-y-2 text-sm">
+                  <li>• Painting: up to 2 years</li>
+                  <li>• Waterproofing: as per system</li>
+                  <li>• Electrical & carpentry workmanship</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -469,7 +468,7 @@ export default function Home() {
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-slate-900">{t.name}</h4>
-                        <p className="text-xs text-slate-500">{t.role}</p>
+                        <p className="text-xs text-slate-500">{t.role || 'Google Reviewer'}</p>
                         <div className="flex items-center gap-1 mt-1">
                           {[...Array(t.rating)].map((_, i) => (
                             <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -564,4 +563,24 @@ export default function Home() {
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps() {
+  // Dynamically read available images from public/images/review
+  const fs = await import('fs')
+  const path = await import('path')
+  const dir = path.join(process.cwd(), 'public', 'images', 'review')
+  let files = []
+  try {
+    files = fs.readdirSync(dir)
+      .filter((f) => /\.(webp|jpg|jpeg|png)$/i.test(f))
+      .sort()
+  } catch (e) {
+    console.warn('[home] review images directory not readable:', e?.message || e)
+  }
+  return {
+    props: {
+      reviewImages: files,
+    },
+  }
 }
