@@ -10,7 +10,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
               HM
             </div>
             <div>
@@ -21,24 +21,24 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href="/" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+            <Link href="/" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
               Home
             </Link>
-            <Link href="/services" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+            <Link href="/services" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
               Services
             </Link>
-            <Link href="/projects" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+            <Link href="/projects" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
               Projects
             </Link>
-            <Link href="/blog" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+            <Link href="/blog" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
               Blog
             </Link>
-            <Link href="/contact" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+            <Link href="/contact" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
               Contact
             </Link>
             <a 
               href="tel:+919031263531" 
-              className="px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors shadow-lg"
+              className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors shadow-lg"
             >
               +91 9031263531
             </a>
@@ -59,24 +59,24 @@ export default function Header() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-slate-200">
             <nav className="flex flex-col gap-4 pt-4">
-              <Link href="/" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+              <Link href="/" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
                 Home
               </Link>
-              <Link href="/services" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+              <Link href="/services" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/projects" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+              <Link href="/projects" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
                 Projects
               </Link>
-              <Link href="/blog" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+              <Link href="/blog" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
                 Blog
               </Link>
-              <Link href="/contact" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">
+              <Link href="/contact" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
                 Contact
               </Link>
               <a 
                 href="tel:+919031263531" 
-                className="px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors text-center"
+                className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors text-center"
               >
                 +91 9031263531
               </a>
