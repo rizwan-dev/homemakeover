@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../../components/Header'
+import Hero from '../../components/Hero'
 import Footer from '../../components/Footer'
 import Link from 'next/link'
 
@@ -86,40 +87,12 @@ export default function InteriorDesignService() {
       <Header />
       
       <main className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
-          <div className="relative max-w-6xl mx-auto px-6 py-24">
-            <div className="text-center">
-              <nav className="flex justify-center mb-8">
-                <Link href="/" className="text-indigo-300 hover:text-white transition-colors">
-                  Home
-                </Link>
-                <span className="mx-2 text-slate-400">/</span>
-                <Link href="/services" className="text-indigo-300 hover:text-white transition-colors">
-                  Services
-                </Link>
-                <span className="mx-2 text-slate-400">/</span>
-                <span className="text-white">Interior Design</span>
-              </nav>
-              <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                Interior Design Services
-              </h1>
-              <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-                Transform your space with our comprehensive interior design services. From concept to execution, 
-                we create beautiful, functional spaces that reflect your style and lifestyle.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/survey" className="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-lg transition-colors">
-                  Get Free Consultation
-                </a>
-                <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-slate-900 transition-colors">
-                  Contact Us
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Hero
+          title="Interior Design Services"
+          subtitle="Transform your space with our comprehensive interior design services — from concept to execution."
+          breadcrumbs={[{ href: '/', label: 'Home' }, { href: '/services', label: 'Services' }, { label: 'Interior Design' }]}
+          backgroundImage="/images/services/01-interior-design-hero.webp"
+        />
 
         {/* Service Overview */}
         <section className="py-20 bg-white">
@@ -136,8 +109,8 @@ export default function InteriorDesignService() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -178,8 +151,8 @@ export default function InteriorDesignService() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {process.map((step, index) => (
                 <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-2xl font-bold text-indigo-600">{step.step}</span>
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-primary">{step.step}</span>
                   </div>
                   <h3 className="text-xl font-bold mb-4">{step.title}</h3>
                   <p className="text-slate-600">{step.description}</p>
@@ -223,19 +196,21 @@ export default function InteriorDesignService() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="relative py-20 text-white overflow-hidden">
+          <img
+            src="/images/services/01-interior-design-hero.webp"
+            alt="Interior design background"
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-dark/70" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-30" />
+          <div className="relative max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
-            <p className="text-xl mb-8 opacity-90">
-              Get started with a free consultation and let us create your dream interior
-            </p>
+            <p className="text-xl mb-8 opacity-90">Get started with a free consultation and let us create your dream interior</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/survey" className="inline-block px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors">
-                Get Free Consultation
-              </a>
-              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
-                Contact Us
-              </a>
+              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">Get Free Consultation</a>
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">Contact Us</a>
             </div>
           </div>
         </section>
