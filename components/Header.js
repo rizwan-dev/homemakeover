@@ -50,8 +50,9 @@ export default function Header() {
             <Link href="/contact" aria-current={isActive('/contact') ? 'page' : undefined} className={`${isActive('/contact') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
               Contact
             </Link>
-            <a
-              href="tel:+919031263531"
+            <button
+              type="button"
+              onClick={() => { if (typeof window !== 'undefined') window.location.href = 'tel:+919031263531' }}
               aria-label="Call Home Makeover"
               className="group relative inline-flex items-center gap-3 px-5 py-2.5 rounded-xl text-white font-semibold bg-gradient-to-r from-primary to-primary-light shadow-lg ring-1 ring-white/10 hover:shadow-xl hover:scale-[1.02] transition-all duration-200 overflow-hidden"
             >
@@ -64,7 +65,7 @@ export default function Header() {
               <span className="tracking-wide">90312 63531</span>
               <span className="absolute inset-0 rounded-xl ring-2 ring-accent/0 group-hover:ring-accent/40 transition-all duration-300" />
               <span className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 bg-white/20 blur-md skew-x-[-20deg] -translate-x-[120%] group-hover:translate-x-[220%] transition-transform duration-700 ease-out" />
-            </a>
+            </button>
             <div className="flex items-center gap-3">
               <a href="https://www.instagram.com/homesmakeover/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-text hover:text-primary">
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -109,8 +110,9 @@ export default function Header() {
               <Link href="/contact" aria-current={isActive('/contact') ? 'page' : undefined} className={`${isActive('/contact') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
                 Contact
               </Link>
-              <a
-                href="tel:+919031263531"
+              <button
+                type="button"
+                onClick={() => { if (typeof window !== 'undefined') window.location.href = 'tel:+919031263531' }}
                 aria-label="Call Home Makeover"
                 className="group relative inline-flex items-center gap-3 px-5 py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-primary to-primary-light shadow-lg ring-1 ring-white/10 hover:shadow-xl hover:scale-[1.02] transition-all duration-200 overflow-hidden"
               >
@@ -123,7 +125,7 @@ export default function Header() {
                 <span className="tracking-wide">90312 63531</span>
                 <span className="absolute inset-0 rounded-xl ring-2 ring-accent/0 group-hover:ring-accent/40 transition-all duration-300" />
                 <span className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 bg-white/20 blur-md skew-x-[-20deg] -translate-x-[120%] group-hover:translate-x-[220%] transition-transform duration-700 ease-out" />
-              </a>
+              </button>
                 <div className="flex items-center gap-4 pt-2">
                   <a href="https://www.instagram.com/homesmakeover/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-text hover:text-primary">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
