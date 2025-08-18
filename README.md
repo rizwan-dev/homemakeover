@@ -4,7 +4,7 @@ Modern marketing site with admin panel for managing submissions.
 
 ## Features
 - Customer-facing website: services, projects, locations, blog, contact, survey
-- Elegant UI with Tailwind CSS and an indigo theme
+- Elegant UI with Tailwind CSS and a custom theme palette (`primary`, `secondary`, `accent`, `neutral`, `text`, `background`)
 - Our Process with refined SVG icons
 - Testimonials horizontal scroller with arrows and edge fades
 - Admin panel: view submissions from Contact and Survey forms
@@ -49,12 +49,15 @@ Set these environment variables in Vercel → Project → Settings → Environme
 Deploy. The API auto-creates the `submissions` table on first use.
 
 ## Admin Panel
-- Login URL: `/admin/login`
-- Credentials (change in `pages/admin/login.js`):
-  - Username: `imranadmin`
-  - Password: `homeinterior@312`
-- Rate limiting: cooldown between attempts and lockout after repeated failures
-- Dashboard URL: `/admin/dashboard` (lists submissions from DB; falls back to file locally)
+- Protected via Basic Auth middleware using environment variables (no API call, no hardcoded creds)
+- Access: `/admin/dashboard` (you'll get a native username/password prompt)
+- Set in `.env.local` (and Vercel → Project Settings → Environment Variables):
+  ```bash
+  ADMIN_USERNAME=your_username
+  ADMIN_PASSWORD=your_strong_password
+  ```
+- Restart dev/build after changing env vars
+- Note: A legacy `/admin/login` page exists but is not required when using middleware auth
 
 ## Forms & Storage
 - Contact form: `pages/contact.js` → API: `pages/api/contact.js`
@@ -77,5 +80,5 @@ Flow:
 ## Notes
 - DB utilities: `lib/db.js` (Neon serverless client)
 - Email utility: `lib/email.js`
-- Indigo theme applied throughout
+- Custom theme applied throughout (see `tailwind.config.js`)
 
