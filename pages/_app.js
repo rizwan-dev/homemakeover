@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import WhatsAppButton from '../components/WhatsAppButton'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#111827" />
       </Head>
       <Component {...pageProps} />
+      <WhatsAppButton />
     </>
   )
 }
