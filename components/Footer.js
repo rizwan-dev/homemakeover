@@ -8,8 +8,12 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
-                HM
+              <div className="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary">
+                <img
+                  src="/images/brand/logo.svg"
+                  alt="Home Makeover logo"
+                  className="w-full h-full object-cover transform scale-150"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">Home Makeover</h3>

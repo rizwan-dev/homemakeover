@@ -385,8 +385,8 @@ export default function Projects() {
                     onClick={() => setActiveTab('all')}
                     className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                       activeTab === 'all' 
-                        ? 'bg-indigo-600 text-white' 
-                        : 'text-slate-600 hover:text-indigo-600'
+                        ? 'bg-primary text-white' 
+                        : 'text-text hover:text-primary'
                     }`}
                   >
                     All Projects
@@ -395,8 +395,8 @@ export default function Projects() {
                     onClick={() => setActiveTab('interior')}
                     className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                       activeTab === 'interior' 
-                        ? 'bg-indigo-600 text-white' 
-                        : 'text-slate-600 hover:text-indigo-600'
+                        ? 'bg-primary text-white' 
+                        : 'text-text hover:text-primary'
                     }`}
                   >
                     Interior Design
@@ -405,8 +405,8 @@ export default function Projects() {
                     onClick={() => setActiveTab('painting')}
                     className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                       activeTab === 'painting' 
-                        ? 'bg-indigo-600 text-white' 
-                        : 'text-slate-600 hover:text-indigo-600'
+                        ? 'bg-primary text-white' 
+                        : 'text-text hover:text-primary'
                     }`}
                   >
                     Painting
@@ -437,7 +437,7 @@ export default function Projects() {
                       }}
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-primary text-white rounded-full text-xs font-medium">
                         {project.category === 'interior' ? 'Interior Design' : 'Painting'}
                       </span>
                     </div>
@@ -469,7 +469,7 @@ export default function Projects() {
                       <ul className="space-y-2">
                         {project.features.slice(0, 3).map((feature, index) => (
                           <li key={index} className="flex items-center gap-3 text-sm text-slate-600">
-                            <div className="w-2 h-2 bg-rose-400 rounded-full flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
                             {feature}
                           </li>
                         ))}
@@ -479,13 +479,13 @@ export default function Projects() {
                     <div className="flex gap-4">
                       <Link 
                         href={`/projects/${project.id}`}
-                        className="flex-1 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-center transition-colors"
+                        className="flex-1 px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold text-center transition-colors"
                       >
                         View Details
                       </Link>
                       <a 
                         href="/survey" 
-                        className="px-6 py-3 border-2 border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-indigo-600 hover:text-indigo-600 transition-colors"
+                        className="px-6 py-3 border-2 border-neutral text-text rounded-lg font-semibold hover:border-primary hover:text-primary transition-colors"
                       >
                         Get Quote
                       </a>
@@ -498,17 +498,17 @@ export default function Projects() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+        <section className="py-20 bg-gradient-to-r from-primary to-primary-light text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
             <p className="text-xl mb-8 opacity-90">
               Get a free consultation and detailed quote for your project
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/survey" className="inline-block px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors">
+              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">
                 Get Free Quote
               </a>
-              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
                 Contact Us
               </a>
             </div>
