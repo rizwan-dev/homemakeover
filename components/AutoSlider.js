@@ -110,13 +110,13 @@ export default function AutoSlider({ sliderImages = [] }) {
             <div className="max-w-6xl mx-auto px-6 w-full">
               <div className="max-w-4xl">
                 <div className="mb-8">
-                  <div className="inline-block px-4 py-2 bg-indigo-600/20 border border-indigo-400/30 rounded-full text-indigo-200 text-sm font-medium mb-6">
+                  <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-medium mb-6">
                     Professional Home Services
                   </div>
                   <h2 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
                     {slide.title}
                   </h2>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-indigo-300 mb-6">
+                  <h3 className="text-2xl md:text-3xl font-semibold text-secondary-dark mb-6">
                     {slide.subtitle}
                   </h3>
                   <p className="text-xl text-slate-200 mb-8 leading-relaxed max-w-2xl">
@@ -128,7 +128,7 @@ export default function AutoSlider({ sliderImages = [] }) {
                 <div className="flex flex-wrap gap-6 mb-8">
                   {slide.stats.map((stat, statIndex) => (
                     <div key={statIndex} className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-indigo-300 rounded-full"></div>
+                      <div className="w-2 h-2 bg-accent rounded-full"></div>
                       <span className="text-slate-300 font-medium">{stat}</span>
                     </div>
                   ))}
@@ -137,7 +137,7 @@ export default function AutoSlider({ sliderImages = [] }) {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
                     href={slide.ctaLink}
-                    className="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                    className="inline-block px-8 py-4 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
                   >
                     {slide.cta}
                   </a>
@@ -181,7 +181,7 @@ export default function AutoSlider({ sliderImages = [] }) {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentSlide 
-                ? 'bg-indigo-300 scale-125' 
+                ? 'bg-accent scale-125' 
                 : 'bg-white/50 hover:bg-white/70 hover:scale-110'
             }`}
           />
@@ -191,7 +191,7 @@ export default function AutoSlider({ sliderImages = [] }) {
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
         <div 
-          className="h-full bg-gradient-to-r from-indigo-300 to-indigo-600 transition-all duration-6000 ease-linear"
+          className="h-full bg-gradient-to-r from-accent to-primary transition-all duration-6000 ease-linear"
           style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
         />
       </div>

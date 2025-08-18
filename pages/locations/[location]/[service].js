@@ -92,7 +92,7 @@ export default function LocationServicePage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
           <p className="mt-4 text-slate-600">Loading...</p>
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function LocationServicePage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Page Not Found</h1>
             <p className="text-slate-600 mb-8">The page you're looking for doesn't exist.</p>
-            <Link href="/" className="inline-block px-6 py-3 bg-rose-600 text-white rounded-lg">
+            <Link href="/" className="inline-block px-6 py-3 bg-primary text-white rounded-lg">
               Back to Home
             </Link>
           </div>
@@ -148,11 +148,11 @@ export default function LocationServicePage() {
           <div className="relative max-w-6xl mx-auto px-6 py-24">
             <div className="text-center">
               <nav className="flex justify-center mb-8">
-                <Link href="/" className="text-indigo-300 hover:text-white transition-colors">
+                <Link href="/" className="text-secondary-dark hover:text-white transition-colors">
                   Home
                 </Link>
                 <span className="mx-2 text-slate-400">/</span>
-                <Link href={`/locations/${locationSlug}`} className="text-indigo-300 hover:text-white transition-colors">
+                <Link href={`/locations/${locationSlug}`} className="text-secondary-dark hover:text-white transition-colors">
                   {location.name}
                 </Link>
                 <span className="mx-2 text-slate-400">/</span>
@@ -166,7 +166,7 @@ export default function LocationServicePage() {
                 {service.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/survey" className="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-lg transition-colors">
+                <a href="/survey" className="inline-block px-8 py-4 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold text-lg transition-colors">
                   Get Free Quote
                 </a>
                 <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-slate-900 transition-colors">
@@ -190,8 +190,8 @@ export default function LocationServicePage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {service.features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -231,8 +231,8 @@ export default function LocationServicePage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -242,8 +242,8 @@ export default function LocationServicePage() {
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -252,8 +252,8 @@ export default function LocationServicePage() {
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -287,17 +287,17 @@ export default function LocationServicePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+        <section className="py-20 bg-gradient-to-r from-primary to-primary-light text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Home in {location.name}?</h2>
             <p className="text-xl mb-8 opacity-90">
               Get started with a free consultation and professional assessment of your project
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/survey" className="inline-block px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors">
+              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">
                 Get Free Quote
               </a>
-              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
                 Contact Us
               </a>
             </div>

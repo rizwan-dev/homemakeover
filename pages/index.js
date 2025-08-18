@@ -128,25 +128,25 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
       step: '01',
       title: 'Consultation',
       description: 'Free initial consultation to understand your vision and requirements',
-      icon: (<MessageSquare className="w-10 h-10 text-indigo-600" aria-hidden />)
+      icon: (<MessageSquare className="w-10 h-10 text-primary" aria-hidden />)
     },
     {
       step: '02',
       title: 'Design & Planning',
       description: 'Detailed design planning with 3D visualizations and material selection',
-      icon: (<Pencil className="w-10 h-10 text-indigo-600" aria-hidden />)
+      icon: (<Pencil className="w-10 h-10 text-primary" aria-hidden />)
     },
     {
       step: '03',
       title: 'Execution',
       description: 'Professional execution with quality materials and expert craftsmanship',
-      icon: (<Hammer className="w-10 h-10 text-indigo-600" aria-hidden />)
+      icon: (<Hammer className="w-10 h-10 text-primary" aria-hidden />)
     },
     {
       step: '04',
       title: 'Delivery',
       description: 'Timely project completion with quality assurance and warranty',
-      icon: (<Truck className="w-10 h-10 text-indigo-600" aria-hidden />)
+      icon: (<Truck className="w-10 h-10 text-primary" aria-hidden />)
     }
   ]
 
@@ -295,7 +295,7 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                   <div className="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">{stat.number}</div>
+                   <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
                   <div className="text-slate-600 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -316,7 +316,7 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6 text-indigo-600">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6 text-primary">
                   <Ruler className="w-8 h-8" aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Interior Design</h3>
@@ -330,13 +330,13 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
                   <li>• Custom Furniture Design</li>
                   <li>• Color Scheme & Material Selection</li>
                 </ul>
-                <a href="/services/interior-design" className="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
+                <a href="/services/interior-design" className="inline-block px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-colors">
                   Learn More
                 </a>
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6 text-indigo-600">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6 text-primary">
                   <PaintRoller className="w-8 h-8" aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Professional Painting</h3>
@@ -350,13 +350,13 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
                   <li>• Color Consultation</li>
                   <li>• Premium Quality Materials</li>
                 </ul>
-                <a href="/services/painting" className="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
+                <a href="/services/painting" className="inline-block px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-colors">
                   Learn More
                 </a>
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6 text-indigo-600">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6 text-primary">
                   <HomeIcon className="w-8 h-8" aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Complete Renovation</h3>
@@ -370,7 +370,7 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
                   <li>• Waterproofing</li>
                   <li>• False Ceiling & POP</li>
                 </ul>
-                <a href="/services/renovation" className="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
+                <a href="/services/renovation" className="inline-block px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-colors">
                   Learn More
                 </a>
               </div>
@@ -391,13 +391,13 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {process.map((step, index) => (
                 <div key={index} className="group text-center relative bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 flex items-center justify-center shadow">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-secondary to-background border border-secondary-dark flex items-center justify-center shadow">
                     {step.icon}
                   </div>
-                  <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-sm mb-3">
+                  <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-secondary text-primary font-semibold text-sm mb-3">
                     Step {step.step}
                   </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-700 transition-colors">{step.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{step.description}</p>
                   {index < process.length - 1 && (
                     <div className="hidden lg:block absolute top-1/2 right-[-16px] w-8 h-0.5 bg-gradient-to-r from-slate-200 to-transparent"></div>
@@ -428,13 +428,13 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-primary text-white rounded-full text-xs font-medium">
                         {project.category}
                       </span>
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">{project.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
                     <div className="flex justify-between text-sm text-slate-600 mb-4">
                       <span>Area: {project.area}</span>
                       <span>Duration: {project.duration}</span>
@@ -448,7 +448,7 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
               <div className="md:col-span-3 text-center mt-4">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 rounded-lg text-slate-700 hover:border-indigo-600 hover:text-indigo-600 font-semibold"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-neutral rounded-lg text-text hover:border-primary hover:text-primary font-semibold"
                 >
                   View All Projects
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
@@ -627,8 +627,8 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-rose-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -637,8 +637,8 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -647,8 +647,8 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -657,8 +657,8 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
@@ -670,17 +670,17 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-rose-600 to-rose-700 text-white">
+        <section className="py-20 bg-gradient-to-r from-primary to-primary-light text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
             <p className="text-xl mb-8 opacity-90">
               Get started with a free consultation and professional assessment of your project
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/survey" className="inline-block px-8 py-4 bg-white text-rose-600 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors">
+              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">
                 Get Free Quote
               </a>
-              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-rose-600 transition-colors">
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
                 Contact Us
               </a>
             </div>

@@ -2,64 +2,9 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Link from 'next/link'
+import blogPosts from '../data/blogPosts'
 
 export default function Blog() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'Choosing the Right Paint Finish for Every Room',
-      excerpt: 'Learn how to select the perfect paint finish for different rooms in your home. From matte to glossy, we cover all the options and their best applications.',
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-      category: 'Painting Tips',
-      date: 'March 15, 2024',
-      readTime: '5 min read'
-    },
-    {
-      id: 2,
-      title: 'Waterproofing Your Terrace: What You Need to Know',
-      excerpt: 'Essential guide to terrace waterproofing to prevent leaks during monsoon season. Best practices and materials for long-lasting protection.',
-      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
-      category: 'Waterproofing',
-      date: 'March 10, 2024',
-      readTime: '7 min read'
-    },
-    {
-      id: 3,
-      title: 'Budgeting for a Full Home Makeover',
-      excerpt: 'Smart strategies to plan and budget your home renovation without sacrificing quality. Get the most value for your investment.',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-      category: 'Interior Design',
-      date: 'March 5, 2024',
-      readTime: '8 min read'
-    },
-    {
-      id: 4,
-      title: 'Modern Kitchen Design Trends for 2024',
-      excerpt: 'Discover the latest kitchen design trends including smart storage solutions, modern appliances, and contemporary aesthetics.',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
-      category: 'Interior Design',
-      date: 'February 28, 2024',
-      readTime: '6 min read'
-    },
-    {
-      id: 5,
-      title: 'Exterior Painting: Weather-Resistant Solutions',
-      excerpt: 'Complete guide to exterior painting with weather-resistant paints and techniques for long-lasting protection against Pune\'s climate.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop',
-      category: 'Painting Tips',
-      date: 'February 20, 2024',
-      readTime: '6 min read'
-    },
-    {
-      id: 6,
-      title: 'False Ceiling Designs for Modern Homes',
-      excerpt: 'Explore contemporary false ceiling designs that enhance your home\'s aesthetics while providing functional benefits like lighting and acoustics.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
-      category: 'Interior Design',
-      date: 'February 15, 2024',
-      readTime: '7 min read'
-    }
-  ]
 
   const featured = blogPosts[0]
   const rest = blogPosts.slice(1)
@@ -90,7 +35,7 @@ export default function Blog() {
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
                 <img src={featured.image} alt={featured.title} className="w-full h-80 object-cover" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">{featured.category}</span>
+                  <span className="px-3 py-1 bg-primary text-white rounded-full text-xs font-medium">{featured.category}</span>
                 </div>
               </div>
               <div>
@@ -101,7 +46,7 @@ export default function Blog() {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">{featured.title}</h2>
                 <p className="text-slate-600 mb-6 text-lg">{featured.excerpt}</p>
-                <Link href={`/blog/${featured.id}`} className="inline-flex items-center px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors">
+                <Link href={`/blog/${featured.id}`} className="inline-flex items-center px-5 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-colors">
                   Read Article
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </Link>
@@ -123,7 +68,7 @@ export default function Blog() {
                       className="w-full h-48 object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-primary text-white rounded-full text-xs font-medium">
                         {post.category}
                       </span>
                     </div>
@@ -138,7 +83,7 @@ export default function Blog() {
                     <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
                     <Link 
                       href={`/blog/${post.id}`} 
-                      className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+                      className="inline-flex items-center text-primary hover:text-primary-light font-medium transition-colors"
                     >
                       Read More
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,9 +108,9 @@ export default function Blog() {
               <input 
                 type="email" 
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               />
-              <button className="px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold transition-colors">
+              <button className="px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-colors">
                 Subscribe
               </button>
             </div>
@@ -182,14 +127,14 @@ export default function Blog() {
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Interior Design</h3>
                 <p className="text-slate-600 mb-4">Tips, trends, and guides for creating beautiful interiors</p>
-                <Link href="/blog?category=interior-design" className="text-indigo-600 hover:text-indigo-700 font-medium">
+                <Link href="/blog?category=interior-design" className="text-primary hover:text-primary-light font-medium">
                   View Articles →
                 </Link>
               </div>

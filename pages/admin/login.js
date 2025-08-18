@@ -86,7 +86,7 @@ export default function AdminLogin() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center px-6">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
         <div className="text-center mb-6">
-          <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white font-bold flex items-center justify-center">HM</div>
+          <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-primary to-primary-light text-white font-bold flex items-center justify-center">HM</div>
           <h1 className="text-2xl font-bold text-slate-900">Admin Login</h1>
           <p className="text-slate-500 text-sm mt-1">Access the submissions dashboard</p>
         </div>
@@ -101,7 +101,7 @@ export default function AdminLogin() {
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="admin"
             />
           </div>
@@ -111,7 +111,7 @@ export default function AdminLogin() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="••••••••"
             />
           </div>
@@ -121,7 +121,7 @@ export default function AdminLogin() {
             className={`w-full px-4 py-2 rounded-lg font-semibold text-white ${
               lockedUntil > Date.now() || cooldownUntil > Date.now()
                 ? 'bg-slate-400 cursor-not-allowed'
-                : 'bg-indigo-600 hover:bg-indigo-700'
+                : 'bg-primary hover:bg-primary-light'
             }`}
           >
             {lockedUntil > Date.now()
