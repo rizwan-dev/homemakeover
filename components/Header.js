@@ -16,8 +16,31 @@ export default function Header() {
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-4">
+          {/* Mobile: menu + compact logo (left) */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg hover:bg-slate-100 transition-colors"
+              aria-label="Open menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <Link href="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-white shrink-0">
+                <img
+                  src="/images/brand/logo.svg"
+                  alt="Home Makeover logo"
+                  className="w-full h-full object-cover transform scale-150"
+                />
+              </div>
+              <span className="text-base font-semibold text-slate-900">Home Makeover</span>
+            </Link>
+          </div>
+
+          {/* Desktop Logo */}
+          <div className="hidden lg:flex items-center gap-4">
             <Link href="/" className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-white shrink-0">
                 <img
@@ -80,15 +103,21 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          {/* Mobile Call Button (right) */}
+          <div className="lg:hidden">
+            <button
+              type="button"
+              onClick={() => { if (typeof window !== 'undefined') window.location.href = 'tel:+919031263531' }}
+              aria-label="Call Home Makeover"
+              className="group relative inline-flex items-center justify-center w-12 h-12 rounded-full text-white bg-gradient-to-br from-primary to-primary-light shadow-md ring-1 ring-white/10 hover:shadow-lg hover:scale-105 transition-all duration-200"
+            >
+              <span className="absolute inset-0 rounded-full animate-ping bg-accent/20" />
+              <svg className="relative w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M2.25 5.25c0-1.243 1.007-2.25 2.25-2.25H6c.966 0 1.795.622 2.084 1.54l.62 2.012c.19.616.03 1.288-.41 1.74l-1.1 1.1a15.75 15.75 0 006.222 6.222l1.1-1.1c.452-.44 1.124-.6 1.74-.41l2.012.62A2.25 2.25 0 0120.75 18v1.5a2.25 2.25 0 01-2.25 2.25h-.75C9.55 21.75 2.25 14.45 2.25 5.25V5.25z" />
+              </svg>
+              <span className="absolute inset-0 rounded-full ring-2 ring-accent/0 group-hover:ring-accent/40 transition-all duration-300" />
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -110,22 +139,7 @@ export default function Header() {
               <Link href="/contact" aria-current={isActive('/contact') ? 'page' : undefined} className={`${isActive('/contact') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
                 Contact
               </Link>
-              <button
-                type="button"
-                onClick={() => { if (typeof window !== 'undefined') window.location.href = 'tel:+919031263531' }}
-                aria-label="Call Home Makeover"
-                className="group relative inline-flex items-center gap-3 px-5 py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-primary to-primary-light shadow-lg ring-1 ring-white/10 hover:shadow-xl hover:scale-[1.02] transition-all duration-200 overflow-hidden"
-              >
-                <span className="relative flex items-center justify-center w-9 h-9 rounded-full bg-white/10">
-                  <span className="absolute inset-0 rounded-full animate-ping bg-accent/20" />
-                  <svg className="relative w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M2.25 5.25c0-1.243 1.007-2.25 2.25-2.25H6c.966 0 1.795.622 2.084 1.54l.62 2.012c.19.616.03 1.288-.41 1.74l-1.1 1.1a15.75 15.75 0 006.222 6.222l1.1-1.1c.452-.44 1.124-.6 1.74-.41l2.012.62A2.25 2.25 0 0120.75 18v1.5a2.25 2.25 0 01-2.25 2.25h-.75C9.55 21.75 2.25 14.45 2.25 5.25V5.25z" />
-                  </svg>
-                </span>
-                <span className="tracking-wide">90312 63531</span>
-                <span className="absolute inset-0 rounded-xl ring-2 ring-accent/0 group-hover:ring-accent/40 transition-all duration-300" />
-                <span className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 bg-white/20 blur-md skew-x-[-20deg] -translate-x-[120%] group-hover:translate-x-[220%] transition-transform duration-700 ease-out" />
-              </button>
+              {/* Call button moved to header right on mobile; removed from drawer */}
                 <div className="flex items-center gap-4 pt-2">
                   <a href="https://www.instagram.com/homesmakeover/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-text hover:text-primary">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
