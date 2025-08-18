@@ -248,34 +248,66 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
               mainEntity: [
                 {
                   '@type': 'Question',
+                  name: 'How much does interior design cost in Pune?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Interior design costs in Pune vary by scope, materials and customization. At Home Makeover, we offer transparent, value-driven pricing with popular starter packages like: 2BHK from ₹3.6 Lakhs, 3BHK from ₹4.3 Lakhs, 4BHK from ₹4.9 Lakhs, Living room from ₹1.2 Lakhs, Kitchen from ₹1.4 Lakhs, Bedroom from ₹1.5 Lakhs. Final costs depend on finishes, hardware, and site readiness.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How to find an interior designer in Pune?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Shortlist Pune-based firms with real local projects, verified reviews, and clear scopes. Explore the Home Makeover portfolio, book a free consultation, and get a tailored proposal with drawings, BOQs and timelines. We provide end-to-end execution from design to installation.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How much does a 2BHK interior cost in Pune?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'A 2BHK interior typically ranges from ₹4–10 Lakhs based on materials and customization. Home Makeover offers curated 2BHK packages starting around ₹3.6 Lakhs, optimized for quality and timelines.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How much does 3BHK interior design cost in Pune?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'A 3BHK interior usually ranges from ₹6–15 Lakhs. With Home Makeover, popular 3BHK configurations start near ₹4.3 Lakhs and scale according to finishes (ply, hardware, veneers, appliances) and scope.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Why choose Home Makeover for your home interiors?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'We combine local Pune expertise with design-first thinking, detailed BOQs, and project management. Our modular plus custom solutions, premium hardware, and on-site quality checks ensure durable, elegant interiors—delivered on time.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What are the timelines for project completion?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'For modular scopes we target a 45-day move‑in from site readiness and approvals. Full‑home interiors typically complete in ~90 days. Timelines depend on design approvals, material lead times and site conditions (conditions apply).'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What services are included under home interior design?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'End‑to‑end: design, drawings, modular kitchens/wardrobes, custom carpentry, painting, electrical, plumbing, false ceiling/POP, waterproofing, flooring/tiling, delivery and installation. We handle both new homes and renovations.'
+                  }
+                },
+                {
+                  '@type': 'Question',
                   name: 'Do you provide a free site survey and quote?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Yes. We provide a free site survey and a detailed quote with no obligation.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'How long does a typical interior project take?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Timelines vary by scope. Most 2–3 BHK interiors complete in 4–10 weeks.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Do you offer warranty on painting and waterproofing?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Yes. Painting up to 2 years, waterproofing as per system warranty.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Which areas in Pune do you serve?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'We serve Kharadi, Viman Nagar, Lohegaon, Kalyani Nagar, Wagholi and nearby areas.'
+                    text: 'Yes. Book a free site survey with Home Makeover and receive a detailed, no‑obligation quote with itemized BOQ.'
                   }
                 }
               ]
@@ -508,39 +540,85 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
 
             <div className="max-w-4xl mx-auto space-y-4">
               <details className="group bg-white rounded-xl border border-slate-200 p-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">Do you provide a free site survey?
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">How much does interior design cost in Pune?
                   <span className="ml-4 transition-transform group-open:rotate-45">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
                   </span>
                 </summary>
-                <div className="mt-3 text-slate-600">Yes, we provide a free site survey and a detailed, no-obligation quote.</div>
+                <div className="mt-3 text-slate-600">
+                  Pricing depends on scope, materials and customization. Popular starting points at Home Makeover:
+                  <ul className="list-disc pl-5 mt-2 space-y-1">
+                    <li>2BHK: from ₹3.6 Lakhs</li>
+                    <li>3BHK: from ₹4.3 Lakhs</li>
+                    <li>4BHK: from ₹4.9 Lakhs</li>
+                    <li>Living room: from ₹1.2 Lakhs</li>
+                    <li>Kitchen: from ₹1.4 Lakhs</li>
+                    <li>Bedroom: from ₹1.5 Lakhs</li>
+                  </ul>
+                </div>
               </details>
 
               <details className="group bg-white rounded-xl border border-slate-200 p-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">What locations do you serve in Pune?
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">How to find an interior designer in Pune?
                   <span className="ml-4 transition-transform group-open:rotate-45">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
                   </span>
                 </summary>
-                <div className="mt-3 text-slate-600">Kharadi, Viman Nagar, Lohegaon, Kalyani Nagar, Wagholi and nearby areas.</div>
+                <div className="mt-3 text-slate-600">Review portfolios, on-site photos, and BOQs; check timelines and warranty. Book a free consultation with Home Makeover for a tailored plan and transparent proposal.</div>
               </details>
 
               <details className="group bg-white rounded-xl border border-slate-200 p-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">Do you offer warranty?
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">How much does a 2BHK interior cost in Pune?
                   <span className="ml-4 transition-transform group-open:rotate-45">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
                   </span>
                 </summary>
-                <div className="mt-3 text-slate-600">Yes. Painting up to 2 years; waterproofing as per system; workmanship warranty on interiors.</div>
+                <div className="mt-3 text-slate-600">Typically ₹4–10 Lakhs. Home Makeover packages start near ₹3.6 Lakhs and scale with finishes and custom elements.</div>
               </details>
 
               <details className="group bg-white rounded-xl border border-slate-200 p-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">How soon can you start after confirmation?
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">How much does 3BHK interior design cost in Pune?
                   <span className="ml-4 transition-transform group-open:rotate-45">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
                   </span>
                 </summary>
-                <div className="mt-3 text-slate-600">Usually within 3–7 days depending on scope and material readiness.</div>
+                <div className="mt-3 text-slate-600">Usually ₹6–15 Lakhs. With Home Makeover, popular 3BHK configurations begin around ₹4.3 Lakhs depending on scope and materials.</div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">Why choose Home Makeover for your interiors?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Pune-based team, design-first approach, premium hardware/finishes, transparent BOQs, on-time handovers and local post-installation support.</div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">What will be the project timelines?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Modular scopes: ~45‑day move‑in from site readiness and approvals. Full‑home interiors: ~90 days. Timelines vary by approvals, material lead times, and site conditions.</div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">What services are included?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Design & drawings, modular kitchens/wardrobes, custom carpentry, painting, electrical, plumbing, false ceiling/POP, waterproofing, flooring/tiling, delivery and installation.</div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-slate-200 p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">Do you provide a free site survey and quote?
+                  <span className="ml-4 transition-transform group-open:rotate-45">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16"/></svg>
+                  </span>
+                </summary>
+                <div className="mt-3 text-slate-600">Yes—book a free site survey and receive a detailed, no‑obligation proposal.</div>
               </details>
             </div>
           </div>
