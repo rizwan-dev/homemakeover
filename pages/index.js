@@ -471,7 +471,7 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
                       <span>Area: {project.area}</span>
                       <span>Duration: {project.duration}</span>
                     </div>
-                    <span className="inline-block px-4 py-2 bg-slate-100 text-slate-700 rounded-lg font-semibold">
+                    <span className="inline-block px-4 py-2 border-2 border-primary text-primary rounded-lg font-semibold transition-colors group-hover:bg-primary group-hover:text-white">
                       View Details
                     </span>
                   </div>
