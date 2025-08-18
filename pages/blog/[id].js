@@ -59,8 +59,12 @@ export default function BlogPost() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
             <p className="text-xl text-slate-300 mb-6">{post.excerpt}</p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">HM</span>
+              <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-white">
+                <img
+                  src="/images/brand/logo.svg"
+                  alt="Home Makeover logo"
+                  className="w-full h-full object-cover transform scale-150"
+                />
               </div>
               <div>
                 <p className="font-semibold">{post.author}</p>

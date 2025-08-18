@@ -86,7 +86,13 @@ export default function AdminLogin() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center px-6">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
         <div className="text-center mb-6">
-          <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-primary to-primary-light text-white font-bold flex items-center justify-center">HM</div>
+          <div className="w-12 h-12 mx-auto mb-3 rounded-xl overflow-hidden ring-2 ring-primary">
+            <img
+              src="/images/brand/logo.svg"
+              alt="Home Makeover logo"
+              className="w-full h-full object-cover transform scale-150"
+            />
+          </div>
           <h1 className="text-2xl font-bold text-slate-900">Admin Login</h1>
           <p className="text-slate-500 text-sm mt-1">Access the submissions dashboard</p>
         </div>

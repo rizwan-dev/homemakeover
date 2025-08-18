@@ -97,25 +97,7 @@ export default function Blog() {
           </div>
         </section>
 
-        {/* Newsletter Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold mb-6">Stay Updated</h2>
-            <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              Get the latest interior design tips, painting guides, and renovation insights delivered to your inbox
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-              <button className="px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-colors">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Categories Section */}
         <section className="py-20 bg-slate-50">
@@ -129,7 +111,9 @@ export default function Blog() {
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
                 <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
                   <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h18v14H3z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5v7M3 12h6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v10M21 10h-6" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Interior Design</h3>
@@ -140,27 +124,28 @@ export default function Blog() {
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.5 3.5l4 4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 20h3a3 3 0 003-3v-1l9-9-3-3-9 9H7a3 3 0 00-3 3v1z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Painting Tips</h3>
                 <p className="text-slate-600 mb-4">Professional painting techniques and color guidance</p>
-                <Link href="/blog?category=painting-tips" className="text-amber-600 hover:text-amber-700 font-medium">
+                <Link href="/blog?category=painting-tips" className="text-primary hover:text-primary-light font-medium">
                   View Articles →
                 </Link>
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9-7 9 7v8a2 2 0 01-2 2h-4v-6H9v6H5a2 2 0 01-2-2v-8z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Renovation</h3>
                 <p className="text-slate-600 mb-4">Home renovation guides and project management tips</p>
-                <Link href="/blog?category=renovation" className="text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/blog?category=renovation" className="text-primary hover:text-primary-light font-medium">
                   View Articles →
                 </Link>
               </div>
