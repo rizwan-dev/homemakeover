@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useState } from 'react'
 import Header from '../components/Header'
+import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import Link from 'next/link'
 
@@ -365,15 +366,12 @@ export default function Projects() {
       <Header />
       
       <main className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h1 className="text-5xl font-bold mb-6">Our Completed Projects</h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Explore our portfolio of successful projects that showcase our expertise, creativity, and commitment to quality in interior design and painting.
-            </p>
-          </div>
-        </section>
+        <Hero
+          title="Our Completed Projects"
+          subtitle="Explore our portfolio that showcases our expertise, creativity, and commitment to quality."
+          breadcrumbs={[{ href: '/', label: 'Home' }, { label: 'Projects' }]}
+          backgroundImage="/images/project/01-forest-county-kharadi-2bhk-interior-main.webp"
+        />
 
         {/* Filter Tabs */}
         <section className="py-12 bg-white">
@@ -498,19 +496,21 @@ export default function Projects() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-primary to-primary-light text-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="relative py-20 text-white overflow-hidden">
+          <img
+            src="/images/project/04-kalyani-nagar-modern-office-interior-main.webp"
+            alt="Projects background"
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-dark/70" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-30" />
+          <div className="relative max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p className="text-xl mb-8 opacity-90">
-              Get a free consultation and detailed quote for your project
-            </p>
+            <p className="text-xl mb-8 opacity-90">Get a free consultation and detailed quote for your project</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">
-                Get Free Quote
-              </a>
-              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
-                Contact Us
-              </a>
+              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">Get Free Quote</a>
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">Contact Us</a>
             </div>
           </div>
         </section>
@@ -519,3 +519,5 @@ export default function Projects() {
     </>
   )
 }
+
+

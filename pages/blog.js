@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import Link from 'next/link'
 import blogPosts from '../data/blogPosts'
@@ -18,15 +19,12 @@ export default function Blog() {
       <Header />
       
       <main className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h1 className="text-5xl font-bold mb-6">Our Blog</h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Expert tips, guides, and insights for interior design, painting, and home renovation
-            </p>
-          </div>
-        </section>
+        <Hero
+          title="Our Blog"
+          subtitle="Expert tips, guides, and insights for interior design, painting, and home renovation."
+          breadcrumbs={[{ href: '/', label: 'Home' }, { label: 'Blog' }]}
+          backgroundImage={featured?.image}
+        />
 
         {/* Featured Post */}
         <section className="py-16 bg-white">
