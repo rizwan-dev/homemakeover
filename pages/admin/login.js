@@ -37,7 +37,7 @@ export default function AdminLogin() {
     if (rate.lastAttemptAt && rate.lastAttemptAt + COOLDOWN_MS > Date.now()) setCooldownUntil(rate.lastAttemptAt + COOLDOWN_MS)
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
     // Check lock
@@ -55,28 +55,38 @@ export default function AdminLogin() {
       return
     }
 
-    // Simple demo credentials, replace with real auth in production
-    if (username === 'imranadmin' && password === 'homeinterior@312') {
-      localStorage.setItem('adminAuth', 'true')
-      clearRate()
-      router.push('/admin/dashboard')
-    } else {
+    try {
+      const resp = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
+      if (resp.ok) {
+        localStorage.setItem('adminAuth', 'true')
+        clearRate()
+        router.push('/admin/dashboard')
+        return
+      }
+      const data = await resp.json().catch(() => ({}))
+      const message = data?.error || 'Invalid credentials'
       // increment failed attempts in window
       const nowRate = getRate()
-      const first = nowRate.firstFailedAt && now - nowRate.firstFailedAt < WINDOW_MS ? nowRate.firstFailedAt : now
-      const failed = (nowRate.firstFailedAt && now - nowRate.firstFailedAt < WINDOW_MS ? (nowRate.failed || 0) : 0) + 1
-      const nextRate = { ...nowRate, firstFailedAt: first, failed, lastAttemptAt: now }
+      const first = nowRate.firstFailedAt && Date.now() - nowRate.firstFailedAt < WINDOW_MS ? nowRate.firstFailedAt : Date.now()
+      const failed = (nowRate.firstFailedAt && Date.now() - nowRate.firstFailedAt < WINDOW_MS ? (nowRate.failed || 0) : 0) + 1
+      const nextRate = { ...nowRate, firstFailedAt: first, failed, lastAttemptAt: Date.now() }
       if (failed >= MAX_ATTEMPTS) {
-        nextRate.lockedUntil = now + LOCKOUT_MS
+        nextRate.lockedUntil = Date.now() + LOCKOUT_MS
         nextRate.failed = 0
         nextRate.firstFailedAt = 0
         setLockedUntil(nextRate.lockedUntil)
         setError('Too many attempts. Please try again later.')
       } else {
-        setCooldownUntil(now + COOLDOWN_MS)
-        setError('Invalid credentials')
+        setCooldownUntil(Date.now() + COOLDOWN_MS)
+        setError(message)
       }
       setRate(nextRate)
+    } catch (err) {
+      setError('Unable to login. Please try again.')
     }
   }
 
