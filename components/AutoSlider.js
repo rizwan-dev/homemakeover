@@ -110,7 +110,7 @@ export default function AutoSlider({ sliderImages = [] }) {
             <div className="max-w-6xl mx-auto px-6 w-full">
               <div className="max-w-4xl">
                 <div className="mb-8">
-                  <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-medium mb-6">
+                  <div className="inline-block px-4 py-2 bg-primary/60 rounded-full text-white text-sm font-semibold mb-6 shadow-md backdrop-blur-[3px] border border-white/20">
                     Professional Home Services
                   </div>
                   <h2 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
