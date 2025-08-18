@@ -147,7 +147,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Home Makeover. All rights reserved.
           </div>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <span className="text-slate-400 text-sm">Serving: Kharadi, Wagholi, Viman Nagar, Kalyani Nagar, Lohegaon, Kesnand</span>
+            <span className="text-slate-400 text-sm">Serving: Kharadi, Wagholi, Viman Nagar, Kalyani Nagar, Magarpatta, Lohegaon, Kesnand</span>
           </div>
         </div>
       </div>

@@ -238,7 +238,7 @@ export default function Contact() {
                       <div>
                         <h4 className="font-semibold text-slate-900">Service Areas</h4>
                         <p className="text-slate-600">
-                          Kharadi, Wagholi, Viman Nagar, Kalyani Nagar, Lohegaon, Kesnand, Pune
+                          Kharadi, Wagholi, Viman Nagar, Kalyani Nagar, Magarpatta, Lohegaon, Kesnand, Pune
                         </p>
                       </div>
                     </div>
