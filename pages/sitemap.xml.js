@@ -3,7 +3,7 @@ const Sitemap = () => {
 }
 
 export const getServerSideProps = async ({ res }) => {
-  const baseUrl = 'https://homemakeover.com'
+  const baseUrl = 'https://homesmakeover.in'
   
   const locations = [
     'kharadi',
