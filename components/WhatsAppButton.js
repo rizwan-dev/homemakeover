@@ -6,10 +6,13 @@ export default function WhatsAppButton() {
 
   return (
     <div className="fixed right-3 md:right-4 top-1/2 -translate-y-1/2 z-50">
-      <a
-        href={`https://wa.me/${phoneNumber}?text=${prefilled}`}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={() => {
+          if (typeof window !== 'undefined') {
+            window.open(`https://wa.me/${phoneNumber}?text=${prefilled}`, '_blank', 'noopener,noreferrer')
+          }
+        }}
         aria-label="Chat on WhatsApp"
         className="group block"
       >
@@ -38,7 +41,7 @@ export default function WhatsAppButton() {
             Chat on WhatsApp
           </div>
         </div>
-      </a>
+      </button>
     </div>
   )
 }
