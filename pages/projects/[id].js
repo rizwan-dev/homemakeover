@@ -614,15 +614,23 @@ The team used premium weather-resistant paints and proper surface preparation te
       
       <main className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="relative text-white overflow-hidden py-20">
+          <img
+            src={project.mainImage}
+            alt={project.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-45"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-dark/85" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-30" />
+          <div className="relative max-w-6xl mx-auto px-6">
             <div className="mb-8">
               <Link href="/projects" className="text-secondary-dark hover:text-white transition-colors">
                 ← Back to Projects
               </Link>
             </div>
             <div className="text-center">
-              <span className="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium mb-4 inline-block">
+              <span className="px-4 py-2 bg-primary/60 backdrop-blur-sm ring-1 ring-white/20 text-white rounded-full text-sm font-medium mb-4 inline-block">
                 {project.category === 'interior' ? 'Interior Design' : 'Painting'}
               </span>
               <h1 className="text-5xl font-bold mb-6">{project.title}</h1>
