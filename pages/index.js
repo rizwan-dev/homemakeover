@@ -670,19 +670,21 @@ export default function Home({ reviewImages = [], sliderImages = [] }) {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-primary to-primary-light text-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="relative py-20 text-white overflow-hidden">
+          <img
+            src="/images/project/02-viman-nagar-luxury-villa-interior-main.webp"
+            alt="Luxury interior background"
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-dark/70" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-30" />
+          <div className="relative max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
-            <p className="text-xl mb-8 opacity-90">
-              Get started with a free consultation and professional assessment of your project
-            </p>
+            <p className="text-xl mb-8 opacity-90">Get started with a free consultation and professional assessment of your project</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">
-                Get Free Quote
-              </a>
-              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
-                Contact Us
-              </a>
+              <a href="/survey" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">Get Free Quote</a>
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">Contact Us</a>
             </div>
           </div>
         </section>

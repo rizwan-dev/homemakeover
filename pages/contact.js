@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import { useState } from 'react'
 
@@ -62,15 +63,12 @@ export default function Contact() {
       <Header />
       
       <main className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h1 className="text-5xl font-bold mb-6">Get In Touch</h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Ready to transform your space? Contact us for a free consultation and quote
-            </p>
-          </div>
-        </section>
+        <Hero
+          title="Get In Touch"
+          subtitle="Ready to transform your space? Contact us for a free consultation and quote."
+          breadcrumbs={[{ href: '/', label: 'Home' }, { label: 'Contact' }]}
+          backgroundImage="/images/services/02-interior-painting-hero.webp"
+        />
 
         {/* Contact Section */}
         <section className="py-20">
