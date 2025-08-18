@@ -84,10 +84,18 @@ export default function Survey() {
       
       <main className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-          <div className="max-w-6xl mx-auto px-6 text-center">
+        <section className="relative text-white overflow-hidden py-20">
+          <img
+            src="/images/project/05-wagholi-interior-wall-painting-main.webp"
+            alt="Survey header background"
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/75 via-primary/65 to-primary-dark/80" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-30" />
+          <div className="relative max-w-6xl mx-auto px-6 text-center">
             <h1 className="text-5xl font-bold mb-6">Free Site Survey</h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-xl text-white/85 max-w-3xl mx-auto">
               Get a professional assessment of your space with detailed recommendations and free quotes
             </p>
           </div>
@@ -115,7 +123,7 @@ export default function Survey() {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                         placeholder="Your first name"
                       />
                     </div>
@@ -127,7 +135,7 @@ export default function Survey() {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                         placeholder="Your last name"
                       />
                     </div>
@@ -141,7 +149,7 @@ export default function Survey() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -153,7 +161,7 @@ export default function Survey() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -173,20 +181,23 @@ export default function Survey() {
                   
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Property Type *</label>
-                    <select 
-                      name="propertyType"
-                      value={formData.propertyType}
-                      onChange={handleChange}
-                      required 
-                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    >
-                      <option value="">Select property type</option>
-                      <option value="apartment">Apartment</option>
-                      <option value="villa">Villa</option>
-                      <option value="house">Independent House</option>
-                      <option value="office">Office/Commercial</option>
-                      <option value="other">Other</option>
-                    </select>
+                    <div className="relative">
+                      <select 
+                        name="propertyType"
+                        value={formData.propertyType}
+                        onChange={handleChange}
+                        required 
+                        className="w-full pr-12 pl-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent appearance-none bg-white"
+                      >
+                        <option value="">Select property type</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="villa">Villa</option>
+                        <option value="house">Independent House</option>
+                        <option value="office">Office/Commercial</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
                   </div>
                   
                   <div>
@@ -285,35 +296,41 @@ export default function Survey() {
                   
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Project Timeline</label>
-                    <select 
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent"
-                    >
-                      <option value="">Select timeline</option>
-                      <option value="immediate">Immediate (Within 1 month)</option>
-                      <option value="soon">Soon (1-3 months)</option>
-                      <option value="planning">Planning Phase (3-6 months)</option>
-                      <option value="future">Future (6+ months)</option>
-                    </select>
+                    <div className="relative">
+                      <select 
+                        name="timeline"
+                        value={formData.timeline}
+                        onChange={handleChange}
+                        className="w-full pr-12 pl-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent appearance-none bg-white"
+                      >
+                        <option value="">Select timeline</option>
+                        <option value="immediate">Immediate (Within 1 month)</option>
+                        <option value="soon">Soon (1-3 months)</option>
+                        <option value="planning">Planning Phase (3-6 months)</option>
+                        <option value="future">Future (6+ months)</option>
+                      </select>
+                      <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Budget Range</label>
-                    <select 
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent"
-                    >
-                      <option value="">Select budget range</option>
-                      <option value="under-50k">Under ₹50,000</option>
-                      <option value="50k-1l">₹50,000 - ₹1,00,000</option>
-                      <option value="1l-2l">₹1,00,000 - ₹2,00,000</option>
-                      <option value="2l-5l">₹2,00,000 - ₹5,00,000</option>
-                      <option value="5l+">₹5,00,000+</option>
-                    </select>
+                    <div className="relative">
+                      <select 
+                        name="budget"
+                        value={formData.budget}
+                        onChange={handleChange}
+                        className="w-full pr-12 pl-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent appearance-none bg-white"
+                      >
+                        <option value="">Select budget range</option>
+                        <option value="under-50k">Under ₹50,000</option>
+                        <option value="50k-1l">₹50,000 - ₹1,00,000</option>
+                        <option value="1l-2l">₹1,00,000 - ₹2,00,000</option>
+                        <option value="2l-5l">₹2,00,000 - ₹5,00,000</option>
+                        <option value="5l+">₹5,00,000+</option>
+                      </select>
+                      <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
                   </div>
                   
                   <div>
@@ -323,7 +340,7 @@ export default function Survey() {
                       value={formData.details}
                       onChange={handleChange}
                       rows="4"
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="Tell us about your project requirements, preferences, or any specific concerns..."
                     ></textarea>
                   </div>
@@ -340,7 +357,7 @@ export default function Survey() {
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                     className="w-full px-8 py-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-400 text-white rounded-lg font-semibold text-lg transition-colors"
+                     className="w-full px-8 py-4 bg-primary hover:bg-secondary disabled:bg-slate-400 text-white rounded-lg font-semibold text-lg transition-colors"
                   >
                     {isSubmitting ? 'Sending Request...' : 'Request Free Survey'}
                   </button>
@@ -354,8 +371,8 @@ export default function Survey() {
                   
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                       <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
-                         <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                         <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -366,8 +383,8 @@ export default function Survey() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                       <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
-                         <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                         <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -378,8 +395,8 @@ export default function Survey() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                       <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
-                         <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                         <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -390,8 +407,8 @@ export default function Survey() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                       <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
-                         <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                         <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -402,8 +419,8 @@ export default function Survey() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -421,7 +438,7 @@ export default function Survey() {
                   
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 bg-rose-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                         1
                       </div>
                       <div>
@@ -431,7 +448,7 @@ export default function Survey() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 bg-rose-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                         2
                       </div>
                       <div>
@@ -441,7 +458,7 @@ export default function Survey() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 bg-rose-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                         3
                       </div>
                       <div>
@@ -451,7 +468,7 @@ export default function Survey() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 bg-rose-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                         4
                       </div>
                       <div>
@@ -467,17 +484,25 @@ export default function Survey() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="relative py-20 text-white overflow-hidden">
+          <img
+            src="/images/services/02-interior-painting-hero.webp"
+            alt="Survey background"
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-dark/70" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-30" />
+          <div className="relative max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
             <p className="text-xl mb-8 opacity-90">
               Get started with a free site survey and professional consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+919031263531" className="inline-block px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors">
+              <a href="tel:+919031263531" className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-secondary transition-colors">
                 Call Now
               </a>
-              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
+              <a href="/contact" className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
                 Contact Us
               </a>
             </div>
