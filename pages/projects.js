@@ -451,13 +451,13 @@ export default function Projects() {
                     
                     <div className="mb-6">
                       <div>
-                        <span className="text-sm text-slate-500">Location</span>
-                        <p className="font-semibold">{project.location}</p>
+                        <h4 className="font-semibold mb-3 text-slate-800">Location</h4>
+                        <p className="text-slate-600">{project.location}</p>
                       </div>
                       {project.society && (
                         <div className="mt-2">
-                          <span className="text-sm text-slate-500">Society</span>
-                          <p className="font-semibold">{project.society}</p>
+                          <h4 className="font-semibold mb-3 text-slate-800">Society</h4>
+                          <p className="text-slate-600">{project.society}</p>
                         </div>
                       )}
                     </div>

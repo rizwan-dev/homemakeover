@@ -1,8 +1,16 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const router = useRouter()
+
+  const isActive = (href) => {
+    const path = router.asPath || '/'
+    if (href === '/') return path === '/'
+    return path === href || path.startsWith(href + '/')
+  }
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -27,19 +35,19 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href="/" className="text-text hover:text-primary font-medium transition-colors">
+            <Link href="/" aria-current={isActive('/') ? 'page' : undefined} className={`${isActive('/') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
               Home
             </Link>
-            <Link href="/services" className="text-text hover:text-primary font-medium transition-colors">
+            <Link href="/services" aria-current={isActive('/services') ? 'page' : undefined} className={`${isActive('/services') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
               Services
             </Link>
-            <Link href="/projects" className="text-text hover:text-primary font-medium transition-colors">
+            <Link href="/projects" aria-current={isActive('/projects') ? 'page' : undefined} className={`${isActive('/projects') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
               Projects
             </Link>
-            <Link href="/blog" className="text-text hover:text-primary font-medium transition-colors">
+            <Link href="/blog" aria-current={isActive('/blog') ? 'page' : undefined} className={`${isActive('/blog') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
               Blog
             </Link>
-            <Link href="/contact" className="text-text hover:text-primary font-medium transition-colors">
+            <Link href="/contact" aria-current={isActive('/contact') ? 'page' : undefined} className={`${isActive('/contact') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
               Contact
             </Link>
             <a 
@@ -77,19 +85,19 @@ export default function Header() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-slate-200">
             <nav className="flex flex-col gap-4 pt-4">
-              <Link href="/" className="text-text hover:text-primary font-medium transition-colors">
+              <Link href="/" aria-current={isActive('/') ? 'page' : undefined} className={`${isActive('/') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
                 Home
               </Link>
-              <Link href="/services" className="text-text hover:text-primary font-medium transition-colors">
+              <Link href="/services" aria-current={isActive('/services') ? 'page' : undefined} className={`${isActive('/services') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
                 Services
               </Link>
-              <Link href="/projects" className="text-text hover:text-primary font-medium transition-colors">
+              <Link href="/projects" aria-current={isActive('/projects') ? 'page' : undefined} className={`${isActive('/projects') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
                 Projects
               </Link>
-              <Link href="/blog" className="text-text hover:text-primary font-medium transition-colors">
+              <Link href="/blog" aria-current={isActive('/blog') ? 'page' : undefined} className={`${isActive('/blog') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
                 Blog
               </Link>
-              <Link href="/contact" className="text-text hover:text-primary font-medium transition-colors">
+              <Link href="/contact" aria-current={isActive('/contact') ? 'page' : undefined} className={`${isActive('/contact') ? 'text-primary font-semibold' : 'text-text hover:text-primary font-medium'} transition-colors`}>
                 Contact
               </Link>
               <a 
