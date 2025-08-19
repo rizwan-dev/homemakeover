@@ -39,6 +39,18 @@ export default function LocationServicePage() {
       fullName: 'Kalyani Nagar, Pune',
       description: 'Kalyani Nagar is an upscale residential area in Pune with premium properties and excellent amenities.',
       image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop'
+    },
+    'wagholi': {
+      name: 'Wagholi',
+      fullName: 'Wagholi, Pune',
+      description: 'Wagholi is a fast-expanding residential hub with great connectivity to Kharadi and Hadapsar.',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop'
+    },
+    'kesnand': {
+      name: 'Kesnand',
+      fullName: 'Kesnand, Pune',
+      description: 'Kesnand offers peaceful living with quick access to Nagar Road.',
+      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop'
     }
   }
 
@@ -125,13 +137,22 @@ export default function LocationServicePage() {
 
   const pageTitle = `${service.shortTitle} in ${location.name}, Pune — Home Makeover`
   const pageDescription = `Professional ${service.shortTitle.toLowerCase()} services in ${location.fullName}. ${service.description} Get free consultation and quotes.`
+  const genericKeywords = [
+    service.shortTitle,
+    `${service.shortTitle} ${location.name}`,
+    `best ${service.shortTitle.toLowerCase()} in ${location.name}`,
+    `affordable ${service.shortTitle.toLowerCase()} in ${location.name}`,
+    `quality ${service.shortTitle.toLowerCase()} in ${location.name}`
+  ]
+  const metaKeywordsList = ['interior design', 'painting', 'home renovation', location.name, location.fullName, 'Pune', ...genericKeywords]
+  const metaKeywords = metaKeywordsList.join(', ')
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={`${service.shortTitle}, ${location.name}, Pune, interior design, painting, home renovation, ${location.fullName}`} />
+        <meta name="keywords" content={metaKeywords} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
@@ -183,9 +204,41 @@ export default function LocationServicePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl font-bold mb-6">Why Choose Our {service.shortTitle} in {location.name}?</h2>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                  {service.longDescription}
-                </p>
+                <div className="prose prose-slate max-w-none mb-8">
+                  <p>{service.longDescription}</p>
+                  {serviceSlug === 'home-painting' && (
+                    <>
+                      <h3>Our Painting Process</h3>
+                      <ul>
+                        <li>Surface audit, crack filling, putty and primer for a smooth base</li>
+                        <li>Low‑VOC, washable emulsions for interiors; weather‑shield for exteriors</li>
+                        <li>Neat masking, dust‑controlled sanding, and clean site handover</li>
+                      </ul>
+                      <h3>Recommended Finishes for {location.name}</h3>
+                      <p>
+                        For {location.fullName}, we recommend stain‑resistant emulsions for living areas and
+                        moisture‑resistant paints for kitchens and bathrooms. Exterior walls get anti‑fungal,
+                        weather‑proof coatings to handle monsoon.
+                      </p>
+                    </>
+                  )}
+                  {serviceSlug === 'home-interior-design' && (
+                    <>
+                      <h3>What You Get with Our Interiors</h3>
+                      <ul>
+                        <li>Space planning, 3D views, and itemized BOQs</li>
+                        <li>Modular kitchen, wardrobes, TV units, study desks, and optimized storage</li>
+                        <li>Lighting plan, false ceiling, and premium finishes suited to {location.name}</li>
+                      </ul>
+                      <h3>Tailored for {location.name}</h3>
+                      <p>
+                        Apartments in {location.fullName} benefit from light palettes, integrated storage, and
+                        layered lighting to maximize space and comfort. We balance aesthetics with functionality
+                        for families and working professionals.
+                      </p>
+                    </>
+                  )}
+                </div>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   {service.features.map((feature, index) => (
@@ -282,6 +335,34 @@ export default function LocationServicePage() {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SEO FAQs */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold">FAQs — {service.shortTitle} in {location.name}</h2>
+              <p className="text-slate-600">Everything you need to know before you start</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">How much does {service.shortTitle.toLowerCase()} cost in {location.name}?</h3>
+                <p className="text-slate-600">Pricing depends on area and scope. We provide a transparent, itemized quotation after a free site visit.</p>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">Do you handle material procurement?</h3>
+                <p className="text-slate-600">Yes. We procure branded materials with proper invoices and provide options suited to your budget and style.</p>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">What is the typical timeline?</h3>
+                <p className="text-slate-600">Most painting jobs complete within 7–14 days. Turnkey interiors typically take 25–45 days depending on scope.</p>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">Will you help with design decisions?</h3>
+                <p className="text-slate-600">Absolutely. A designer will guide color schemes, finishes, and layouts to balance aesthetics and practicality.</p>
+              </div>
             </div>
           </div>
         </section>
