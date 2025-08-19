@@ -15,6 +15,25 @@ export default function LocationPage() {
       fullName: 'Kharadi, Pune',
       description: 'Kharadi is a rapidly developing area in Pune known for its IT parks, residential complexes, and modern infrastructure. We provide comprehensive interior design and painting services to transform homes in this vibrant locality.',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop',
+      neighborhoods: ['Forest County', 'Ganga Platino', 'Eon IT Park Vicinity', 'Gera Greensville', 'Marvel Zephyr'],
+      seo: [
+        'Looking for trusted interior designers in Kharadi? Home Makeover delivers end‑to‑end home interiors—modular kitchens, wardrobes, false ceilings, and premium wall finishes—tailored to compact 2 BHK/3 BHK layouts popular in Kharadi.',
+        'For house painting in Kharadi, we use low‑VOC paints, precise surface preparation, and dust‑controlled execution to ensure a clean, long‑lasting finish that stands up to Pune’s weather.'
+      ],
+      keywords: [
+        'best home painting in Kharadi',
+        'best home interior design in Kharadi',
+        'affordable painting service in Kharadi',
+        'quality painting service in Kharadi',
+        'affordable interior design service in Kharadi',
+        'quality home interior design service in Kharadi',
+        'trusted house painters in Kharadi',
+        'professional interior designers in Kharadi',
+        'modular kitchen designers in Kharadi',
+        'false ceiling contractor in Kharadi',
+        '2 BHK interior in Kharadi',
+        '3 BHK interior in Kharadi'
+      ],
       highlights: [
         'IT Park Proximity',
         'Modern Residential Complexes',
@@ -27,6 +46,21 @@ export default function LocationPage() {
       fullName: 'Viman Nagar, Pune',
       description: 'Viman Nagar is a premium residential area in Pune with excellent connectivity and modern amenities. Our expert team delivers high-quality interior design and painting services to enhance the beauty of homes in this upscale locality.',
       image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
+      neighborhoods: ['Rohan Mithila', 'Konark Nagar', 'Mhada Colony', 'Phoenix Marketcity Vicinity'],
+      seo: [
+        'Premium interior design in Viman Nagar with bespoke furniture, veneer wall panels, and layered lighting suited to high‑spec apartments.',
+        'Professional painting in Viman Nagar with washable emulsions, silky finishes, and accent textures for a refined, timeless look.'
+      ],
+      keywords: [
+        'best home painting in Viman Nagar',
+        'best home interior design in Viman Nagar',
+        'affordable painting service in Viman Nagar',
+        'quality painting service in Viman Nagar',
+        'affordable interior design service in Viman Nagar',
+        'quality home interior design service in Viman Nagar',
+        'trusted house painters in Viman Nagar',
+        'professional interior designers in Viman Nagar'
+      ],
       highlights: [
         'Premium Residential Area',
         'Excellent Connectivity',
@@ -39,6 +73,21 @@ export default function LocationPage() {
       fullName: 'Lohegaon, Pune',
       description: 'Lohegaon is a growing residential area in Pune with good connectivity and affordable housing options. We offer professional interior design and painting services to help residents create beautiful living spaces.',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
+      neighborhoods: ['Rohan Abhilasha', 'Nyati Enclave', 'Dreams Onella', 'Dhanori Road Belt'],
+      seo: [
+        'Budget‑friendly interiors in Lohegaon with smart storage, modular wardrobes, and space‑saving furniture for compact homes.',
+        'Exterior and interior painting in Lohegaon with crack filling, damp‑proof primers, and weather‑shield top coats.'
+      ],
+      keywords: [
+        'best home painting in Lohegaon',
+        'best home interior design in Lohegaon',
+        'affordable painting service in Lohegaon',
+        'quality painting service in Lohegaon',
+        'affordable interior design service in Lohegaon',
+        'quality home interior design service in Lohegaon',
+        'house painters in Lohegaon',
+        'interior designers in Lohegaon'
+      ],
       highlights: [
         'Growing Residential Area',
         'Good Connectivity',
@@ -51,6 +100,19 @@ export default function LocationPage() {
       fullName: 'Magarpatta, Pune',
       description: 'Magarpatta is a well-planned township in Pune known for its modern infrastructure and quality living. Our comprehensive interior design and painting services help residents maintain and enhance their beautiful homes.',
       image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
+      neighborhoods: ['Magarpatta City', 'Cosmos', 'Iris', 'Roystonia', 'Amanora Vicinity'],
+      seo: [
+        'Turnkey interior design in Magarpatta City with end‑to‑end execution, site supervision, and brand‑grade hardware.',
+        'Premium painting solutions in Magarpatta—stain‑resistant emulsions, elegant textures, and zero‑VOC options for families.'
+      ],
+      keywords: [
+        'best home painting in Magarpatta',
+        'best home interior design in Magarpatta',
+        'affordable painting service in Magarpatta',
+        'quality painting service in Magarpatta',
+        'affordable interior design service in Magarpatta',
+        'quality home interior design service in Magarpatta'
+      ],
       highlights: [
         'Well-Planned Township',
         'Modern Infrastructure',
@@ -63,11 +125,74 @@ export default function LocationPage() {
       fullName: 'Kalyani Nagar, Pune',
       description: 'Kalyani Nagar is an upscale residential area in Pune with premium properties and excellent amenities. We provide luxury interior design and painting services to match the high standards of this prestigious locality.',
       image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
+      neighborhoods: ['Cerebrum IT Park Belt', 'Trump Towers Vicinity', 'Konark Campus', 'West Avenue'],
+      seo: [
+        'Luxury interiors in Kalyani Nagar with custom veneer finishes, quartz counters, and designer lighting for an elevated aesthetic.',
+        'Fine‑finish painting in Kalyani Nagar—buttery matt emulsions, metallic accents, and Italian textures.'
+      ],
+      keywords: [
+        'best home painting in Kalyani Nagar',
+        'best home interior design in Kalyani Nagar',
+        'affordable painting service in Kalyani Nagar',
+        'quality painting service in Kalyani Nagar',
+        'affordable interior design service in Kalyani Nagar',
+        'quality home interior design service in Kalyani Nagar'
+      ],
       highlights: [
         'Upscale Residential Area',
         'Premium Properties',
         'Excellent Amenities',
         'Prestigious Locality'
+      ]
+    },
+    'wagholi': {
+      name: 'Wagholi',
+      fullName: 'Wagholi, Pune',
+      description: 'Wagholi is a fast-expanding residential hub with great connectivity to Kharadi and Hadapsar. We offer complete interior and painting services tailored for modern apartments and villas in Wagholi.',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop',
+      neighborhoods: ['Nyati Elan', 'Ivy Estate', 'Majestique Manhattan', 'VTP Pegasus'],
+      seo: [
+        'Value‑driven interior design in Wagholi with modular kitchens, study units, and space‑saving wardrobes for 1.5/2 BHK homes.',
+        'Durable painting systems in Wagholi—putty + primer + premium emulsions for smooth, long‑lasting results.'
+      ],
+      keywords: [
+        'best home painting in Wagholi',
+        'best home interior design in Wagholi',
+        'affordable painting service in Wagholi',
+        'quality painting service in Wagholi',
+        'affordable interior design service in Wagholi',
+        'quality home interior design service in Wagholi'
+      ],
+      highlights: [
+        'Rapidly Developing Area',
+        'Great Connectivity',
+        'New Residential Projects',
+        'Value-for-Money Housing'
+      ]
+    },
+    'kesnand': {
+      name: 'Kesnand',
+      fullName: 'Kesnand, Pune',
+      description: 'Kesnand offers peaceful living with quick access to Nagar Road. Our team delivers end-to-end interiors and painting with a focus on durability and smart space planning.',
+      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop',
+      neighborhoods: ['Kesnand Greens', 'Nagar Road Corridor', 'Gatlodia Belt'],
+      seo: [
+        'Practical interior solutions in Kesnand—false ceilings with cove lighting, modular storage, and easy‑maintenance materials.',
+        'Moisture‑resistant painting in Kesnand with anti‑fungal coats and weather shield exteriors.'
+      ],
+      keywords: [
+        'best home painting in Kesnand',
+        'best home interior design in Kesnand',
+        'affordable painting service in Kesnand',
+        'quality painting service in Kesnand',
+        'affordable interior design service in Kesnand',
+        'quality home interior design service in Kesnand'
+      ],
+      highlights: [
+        'Peaceful Locality',
+        'Good Connectivity',
+        'Spacious Homes',
+        'Emerging Neighborhood'
       ]
     }
   }
@@ -126,13 +251,15 @@ export default function LocationPage() {
 
   const pageTitle = `Interior Design & Painting Services in ${location.name}, Pune — Home Makeover`
   const pageDescription = `Professional interior design and painting services in ${location.fullName}. Transform your home with our expert team. Free consultation and quotes available.`
+  const metaKeywordsList = ['interior design', 'painting', 'home renovation', location.name, location.fullName, 'Pune', ...(location.keywords || [])]
+  const metaKeywords = metaKeywordsList.join(', ')
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={`interior design, painting, ${location.name}, Pune, home renovation, ${location.fullName}`} />
+        <meta name="keywords" content={metaKeywords} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
@@ -183,7 +310,6 @@ export default function LocationPage() {
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   {location.description}
                 </p>
-                
                 <div className="grid md:grid-cols-2 gap-6">
                   {location.highlights.map((highlight, index) => (
                     <div key={index} className="flex items-start gap-3">
@@ -197,7 +323,6 @@ export default function LocationPage() {
                   ))}
                 </div>
               </div>
-
               <div className="relative">
                 <div className="w-full rounded-2xl overflow-hidden shadow-2xl">
                   <img 
@@ -234,7 +359,6 @@ export default function LocationPage() {
                   <div className="p-8">
                     <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                     <p className="text-slate-600 mb-6">{service.description}</p>
-                    
                     <div className="mb-6">
                       <h4 className="font-semibold mb-3 text-slate-800">What's Included:</h4>
                       <ul className="space-y-2">
@@ -246,7 +370,6 @@ export default function LocationPage() {
                         ))}
                       </ul>
                     </div>
-                    
                     <Link 
                       href={`/locations/${locationSlug}/${service.id}`}
                       className="inline-block px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-colors"
@@ -260,50 +383,76 @@ export default function LocationPage() {
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="py-20 bg-white">
+        {/* Areas We Serve in Location */}
+        <section className="py-16 bg-slate-50">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Why Choose Home Makeover in {location.name}?</h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                We combine local expertise with professional standards to deliver exceptional results
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                 <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
-                   <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3">Local Expertise</h3>
-                <p className="text-slate-600">We understand the unique requirements and preferences of {location.name} residents</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <h2 className="text-3xl font-bold mb-4">Areas we serve in {location.name}</h2>
+                <p className="text-slate-600 mb-6">We actively undertake projects across the most popular societies and micro‑localities in {location.fullName}.</p>
+                <ul className="grid grid-cols-2 gap-3">
+                  {(location.neighborhoods || []).map((n) => (
+                    <li key={n} className="flex items-center gap-2 text-slate-700">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+                      {n}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <div className="text-center">
-                 <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
-                   <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              <div>
+                <h2 className="text-3xl font-bold mb-4">Interior & Painting Experts in {location.name}</h2>
+                <div className="space-y-4 text-slate-600 leading-relaxed">
+                  {(location.seo || []).map((p, idx) => (
+                    <p key={idx}>{p}</p>
+                  ))}
+                  <p>From concept to completion, we manage design, materials, execution, and quality checks. Get a free site visit and detailed quotation tailored to your floor plan.</p>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Quick Response</h3>
-                <p className="text-slate-600">Fast response times and quick site visits in {location.name} and surrounding areas</p>
-              </div>
-
-              <div className="text-center">
-                 <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
-                   <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3">Quality Assurance</h3>
-                <p className="text-slate-600">Consistent quality and professional service standards across {location.name}</p>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Popular Searches (SEO) */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-2xl font-bold mb-4">Popular searches in {location.name}</h2>
+            <p className="text-slate-600 mb-4">Customers often search for these services in {location.fullName}:</p>
+            <div className="flex flex-wrap gap-2">
+              {(location.keywords || []).map((kw) => (
+                <span key={kw} className="px-3 py-1.5 rounded-full bg-secondary text-primary text-sm font-medium">
+                  {kw}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Location FAQs */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-8">FAQs for {location.name}</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">How much time does a 2 BHK interior take in {location.name}?</h3>
+                <p className="text-slate-600">Most 2 BHK interiors finish within 25–40 days depending on scope, site readiness, and material choices.</p>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">Which paint brands do you use for homes in {location.name}?</h3>
+                <p className="text-slate-600">We work with Asian Paints, Nerolac, and Dulux—recommending low‑VOC, washable emulsions for interiors and weather‑proof systems for exteriors.</p>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">Do you provide 3D designs and material boards?</h3>
+                <p className="text-slate-600">Yes. Our design packages can include 3D renders, color palettes, veneer/laminate selections, and lighting plans.</p>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-semibold text-slate-900 mb-2">Is there a warranty on workmanship?</h3>
+                <p className="text-slate-600">Yes. We provide workmanship warranty along with standard brand warranties on hardware and paints.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary to-primary-light text-white">

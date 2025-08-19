@@ -146,8 +146,21 @@ export default function Footer() {
           <div className="text-slate-400 text-sm">
             © {new Date().getFullYear()} Home Makeover. All rights reserved.
           </div>
-          <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <span className="text-slate-400 text-sm">Serving: Kharadi, Wagholi, Viman Nagar, Kalyani Nagar, Magarpatta, Lohegaon, Kesnand</span>
+          <div className="flex items-center gap-2 mt-4 md:mt-0 text-slate-400 text-sm flex-wrap">
+            <span>Serving:</span>
+            <Link href="/locations/kharadi" className="hover:text-white transition-colors">Kharadi</Link>
+            <span>•</span>
+            <Link href="/locations/wagholi" className="hover:text-white transition-colors">Wagholi</Link>
+            <span>•</span>
+            <Link href="/locations/viman-nagar" className="hover:text-white transition-colors">Viman Nagar</Link>
+            <span>•</span>
+            <Link href="/locations/kalyani-nagar" className="hover:text-white transition-colors">Kalyani Nagar</Link>
+            <span>•</span>
+            <Link href="/locations/magarpatta" className="hover:text-white transition-colors">Magarpatta</Link>
+            <span>•</span>
+            <Link href="/locations/lohegaon" className="hover:text-white transition-colors">Lohegaon</Link>
+            <span>•</span>
+            <Link href="/locations/kesnand" className="hover:text-white transition-colors">Kesnand</Link>
           </div>
         </div>
       </div>

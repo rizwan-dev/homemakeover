@@ -3,14 +3,16 @@ const Sitemap = () => {
 }
 
 export const getServerSideProps = async ({ res }) => {
-  const baseUrl = 'https://homesmakeover.in'
+  const baseUrl = 'https://www.homesmakeover.in'
   
   const locations = [
     'kharadi',
     'viman-nagar', 
     'lohegaon',
     'magarpatta',
-    'kalyani-nagar'
+    'kalyani-nagar',
+    'wagholi',
+    'kesnand'
   ]
 
   const services = [
