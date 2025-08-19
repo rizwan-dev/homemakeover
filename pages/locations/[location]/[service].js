@@ -156,9 +156,9 @@ export default function LocationServicePage() {
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://homemakeover.com/locations/${locationSlug}/${serviceSlug}`} />
+        <meta property="og:url" content={`https://homesmakeover.in/locations/${locationSlug}/${serviceSlug}`} />
         <meta property="og:image" content={service.image} />
-        <link rel="canonical" href={`https://homemakeover.com/locations/${locationSlug}/${serviceSlug}`} />
+        <link rel="canonical" href={`https://homesmakeover.in/locations/${locationSlug}/${serviceSlug}`} />
       </Head>
       <Header />
       

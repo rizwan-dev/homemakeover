@@ -59,6 +59,12 @@ export default function Contact() {
       <Head>
         <title>Contact Us — Home Makeover | Interior Design & Painting in Pune</title>
         <meta name="description" content="Contact Home Makeover for interior design and painting services in Pune. Get free consultation and quotes." />
+        <meta name="keywords" content="contact Home Makeover, interior designer Pune contact, painting service Pune phone, address Kharadi, Pune" />
+        <meta property="og:title" content="Contact Us — Home Makeover | Interior Design & Painting in Pune" />
+        <meta property="og:description" content="Contact Home Makeover for interior design, painting, and renovation services in Pune. Free consultation and quotes." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://homesmakeover.in/contact" />
+        <link rel="canonical" href="https://homesmakeover.in/contact" />
       </Head>
       <Header />
       

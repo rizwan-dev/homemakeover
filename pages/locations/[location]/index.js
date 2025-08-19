@@ -263,9 +263,9 @@ export default function LocationPage() {
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://homemakeover.com/locations/${locationSlug}`} />
+        <meta property="og:url" content={`https://homesmakeover.in/locations/${locationSlug}`} />
         <meta property="og:image" content={location.image} />
-        <link rel="canonical" href={`https://homemakeover.com/locations/${locationSlug}`} />
+        <link rel="canonical" href={`https://homesmakeover.in/locations/${locationSlug}`} />
       </Head>
       <Header />
       

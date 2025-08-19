@@ -362,6 +362,12 @@ export default function Projects() {
       <Head>
         <title>Our Projects — Home Makeover | Interior Design & Painting in Pune</title>
         <meta name="description" content="Explore our completed projects including interior design, painting, and renovation work in Pune. View our portfolio of successful transformations." />
+        <meta name="keywords" content="interior design projects Pune, painting portfolio Pune, renovation case studies, Kharadi, Viman Nagar, Kalyani Nagar, Magarpatta, Lohegaon, Wagholi, Kesnand" />
+        <meta property="og:title" content="Our Projects — Home Makeover | Interior Design & Painting in Pune" />
+        <meta property="og:description" content="Explore our completed interior design, painting, and renovation projects across Pune." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://homesmakeover.in/projects" />
+        <link rel="canonical" href="https://homesmakeover.in/projects" />
       </Head>
       <Header />
       

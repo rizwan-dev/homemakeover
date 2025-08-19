@@ -133,6 +133,12 @@ export default function Services() {
       <Head>
         <title>Our Services — Home Makeover | Interior Design & Painting in Pune</title>
         <meta name="description" content="Professional interior design, painting, carpentry, electrical, waterproofing, and renovation services in Pune. Free consultation, quality work, and warranty." />
+        <meta name="keywords" content="interior design services Pune, painting services Pune, renovation, waterproofing, carpentry, electrician, Kharadi, Viman Nagar, Kalyani Nagar, Magarpatta, Lohegaon, Wagholi, Kesnand" />
+        <meta property="og:title" content="Our Services — Home Makeover | Interior Design & Painting in Pune" />
+        <meta property="og:description" content="Professional interior design, painting, carpentry, electrical, waterproofing, and renovation services in Pune. Free consultation, quality work, and warranty." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://homesmakeover.in/services" />
+        <link rel="canonical" href="https://homesmakeover.in/services" />
       </Head>
       <Header />
       
