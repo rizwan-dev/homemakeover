@@ -5,6 +5,34 @@ import Footer from '../../components/Footer'
 import Link from 'next/link'
 
 export default function RenovationService() {
+  const locations = [
+    { name: 'Kharadi', slug: 'kharadi' },
+    { name: 'Viman Nagar', slug: 'viman-nagar' },
+    { name: 'Kalyani Nagar', slug: 'kalyani-nagar' },
+    { name: 'Magarpatta', slug: 'magarpatta' },
+    { name: 'Lohegaon', slug: 'lohegaon' },
+    { name: 'Wagholi', slug: 'wagholi' },
+    { name: 'Kesnand', slug: 'kesnand' },
+  ]
+
+  const popularKeywords = [
+    'best home renovation in Pune',
+    'affordable home renovation Pune',
+    'kitchen renovation Pune',
+    'bathroom remodeling Pune',
+    'false ceiling and lighting Pune'
+  ]
+
+  const locationKeywords = locations.flatMap(l => [
+    `best home renovation in ${l.name}`,
+    `affordable renovation in ${l.name}`,
+    `quality renovation service in ${l.name}`
+  ])
+
+  const metaKeywords = [
+    'home renovation', 'Pune',
+    ...popularKeywords, ...locationKeywords
+  ].join(', ')
   const features = [
     'Carpentry & Furniture',
     'Electrical Work',
@@ -48,22 +76,22 @@ export default function RenovationService() {
 
   const projects = [
     {
-      title: 'Complete Villa Renovation',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
-      area: '3,500 sq ft',
-      duration: '3 months'
+      title: 'False Ceiling Installation — Kesnand',
+      image: '/images/project/06-kesnand-false-ceiling-installation-main.webp',
+      area: '1,800 sq ft',
+      duration: '30 days'
     },
     {
-      title: 'Kitchen & Bathroom Remodel',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop',
-      area: '800 sq ft',
-      duration: '6 weeks'
+      title: '3 BHK Interior Makeover — Majestique Towers, Kharadi',
+      image: '/images/project/08-majestique-towers-kharadi-3bhk-makeover-main.webp',
+      area: '1,400 sq ft',
+      duration: '32 days'
     },
     {
-      title: 'Commercial Office Renovation',
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-      area: '2,000 sq ft',
-      duration: '2 months'
+      title: 'Premium Interior Upgrade — VTP Pegasus, Kharadi',
+      image: '/images/project/09-vtp-pegasus-kharadi-premium-interior-main.webp',
+      area: '1,250 sq ft',
+      duration: '34 days'
     }
   ]
 
@@ -72,7 +100,7 @@ export default function RenovationService() {
       <Head>
         <title>Complete Home Renovation Services in Pune — Home Makeover</title>
         <meta name="description" content="Complete home renovation services in Pune. Carpentry, electrical, waterproofing, false ceiling, and more. One-stop renovation solution with 10+ years experience." />
-        <meta name="keywords" content="home renovation, Pune, carpentry, electrical work, waterproofing, false ceiling, renovation services" />
+        <meta name="keywords" content={metaKeywords} />
         <meta property="og:title" content="Complete Home Renovation Services in Pune — Home Makeover" />
         <meta property="og:description" content="Complete home renovation services in Pune. Carpentry, electrical, waterproofing, false ceiling, and more. One-stop renovation solution." />
         <meta property="og:type" content="website" />
@@ -92,7 +120,7 @@ export default function RenovationService() {
         {/* Service Overview */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start lg:items-stretch">
               <div>
                 <h2 className="text-4xl font-bold mb-6">One-Stop Renovation Solution</h2>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -114,21 +142,44 @@ export default function RenovationService() {
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-slate-50 rounded-xl">
-                  <h3 className="font-semibold text-slate-900 mb-2">Project-Based Pricing</h3>
-                  <p className="text-slate-600">Custom quotes based on project scope and requirements</p>
+                <div className="prose prose-slate max-w-none mt-6 mb-8">
+                  <h3>Scope & Standards</h3>
+                  <ul>
+                    <li>Carpentry with marine ply/HDHMR, soft‑close hardware</li>
+                    <li>Electrical rewiring with ISI cables and MCBs</li>
+                    <li>Bathroom waterproofing with 3‑coat system</li>
+                    <li>False ceiling with GI channels and moisture‑resistant boards</li>
+                  </ul>
                 </div>
+                {/* Removed starting price section as requested */}
               </div>
 
               <div className="relative">
-                <div className="w-full rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative w-full h-full min-h-[24rem] rounded-2xl overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop" 
-                    alt="Complete Home Renovation"
-                    className="w-full h-96 object-cover"
+                    src="/images/services/08-home-renovation-hero.webp" 
+                    alt="Complete home renovation"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas */}
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold">Renovation Services Near You</h2>
+              <p className="text-slate-600">We actively serve prime localities across Pune</p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {locations.map(loc => (
+                <Link key={loc.slug} href={`/locations/${loc.slug}/home-interior-design`} className="px-4 py-2 rounded-full bg-white shadow-sm ring-1 ring-slate-200 text-slate-700 hover:text-primary hover:ring-primary transition">
+                  Renovation in {loc.name}
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -186,6 +237,43 @@ export default function RenovationService() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Searches (SEO) */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-2xl font-bold mb-4">Popular searches</h2>
+            <div className="flex flex-wrap gap-2">
+              {[...popularKeywords, ...locationKeywords.slice(0, 12)].map(kw => (
+                <span key={kw} className="px-3 py-1.5 rounded-full bg-secondary text-primary text-sm font-medium">{kw}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-8">Renovation FAQs</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">Do you provide turnkey renovation?</h3>
+                <p className="text-slate-600">Yes. We manage civil, electrical, plumbing, carpentry, paint and handover with quality checks.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">How do you ensure waterproofing quality?</h3>
+                <p className="text-slate-600">We use branded membranes and a 3‑coat system with pond tests for bathrooms and terraces.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">Can you renovate within occupied homes?</h3>
+                <p className="text-slate-600">We plan phased work, dust control, and daily cleanup to minimize disruption.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">Do you offer warranties?</h3>
+                <p className="text-slate-600">Yes. Workmanship warranty with brand warranties on materials and hardware.</p>
+              </div>
             </div>
           </div>
         </section>
