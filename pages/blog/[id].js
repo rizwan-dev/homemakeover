@@ -37,6 +37,13 @@ export default function BlogPost() {
       <Head>
         <title>{post.title} — Home Makeover Blog</title>
         <meta name="description" content={post.excerpt} />
+        <meta name="keywords" content={`interior design tips, painting tips, renovation guides, Pune, ${post.category}`} />
+        <meta property="og:title" content={`${post.title} — Home Makeover Blog`} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={post.image} />
+        <meta property="og:url" content={`https://homesmakeover.in/blog/${post.id}`} />
+        <link rel="canonical" href={`https://homesmakeover.in/blog/${post.id}`} />
       </Head>
       <Header />
       

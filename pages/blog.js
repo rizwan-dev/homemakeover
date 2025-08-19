@@ -15,6 +15,12 @@ export default function Blog() {
       <Head>
         <title>Blog — Home Makeover | Interior Design & Painting Tips</title>
         <meta name="description" content="Expert tips and guides for interior design, painting, waterproofing, and home renovation. Stay updated with the latest trends and best practices." />
+        <meta name="keywords" content="interior design blog Pune, painting tips Pune, renovation guides, waterproofing tips, Home Makeover blog" />
+        <meta property="og:title" content="Blog — Home Makeover | Interior Design & Painting Tips" />
+        <meta property="og:description" content="Expert tips and guides for interior design, painting, waterproofing, and home renovation in Pune." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://homesmakeover.in/blog" />
+        <link rel="canonical" href="https://homesmakeover.in/blog" />
       </Head>
       <Header />
       

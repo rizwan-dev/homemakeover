@@ -79,6 +79,12 @@ export default function Survey() {
       <Head>
         <title>Free Site Survey — Home Makeover | Interior Design & Painting in Pune</title>
         <meta name="description" content="Request a free site survey for interior design and painting services in Pune. Professional consultation and quotes." />
+        <meta name="keywords" content="free site survey Pune, interior design survey, painting survey, Kharadi, Viman Nagar, Kalyani Nagar, Magarpatta, Lohegaon, Wagholi, Kesnand" />
+        <meta property="og:title" content="Free Site Survey — Home Makeover | Interior Design & Painting in Pune" />
+        <meta property="og:description" content="Book a free site survey for interior design, painting, and renovation services in Pune. Professional consultation and quotes." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://homesmakeover.in/survey" />
+        <link rel="canonical" href="https://homesmakeover.in/survey" />
       </Head>
       <Header />
       
