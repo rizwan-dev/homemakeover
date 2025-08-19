@@ -5,6 +5,38 @@ import Footer from '../../components/Footer'
 import Link from 'next/link'
 
 export default function InteriorDesignService() {
+  const locations = [
+    { name: 'Kharadi', slug: 'kharadi' },
+    { name: 'Viman Nagar', slug: 'viman-nagar' },
+    { name: 'Kalyani Nagar', slug: 'kalyani-nagar' },
+    { name: 'Magarpatta', slug: 'magarpatta' },
+    { name: 'Lohegaon', slug: 'lohegaon' },
+    { name: 'Wagholi', slug: 'wagholi' },
+    { name: 'Kesnand', slug: 'kesnand' },
+  ]
+
+  const popularKeywords = [
+    'best home interior design in Pune',
+    'affordable interior designer in Pune',
+    'modular kitchen design Pune',
+    'false ceiling and lighting design Pune',
+    'custom furniture designer Pune'
+  ]
+
+  const locationKeywords = locations.flatMap(l => [
+    `best home interior design in ${l.name}`,
+    `affordable interior design in ${l.name}`,
+    `quality home interior design service in ${l.name}`,
+    `modular kitchen designer in ${l.name}`
+  ])
+
+  const metaKeywords = [
+    'interior design',
+    'home interiors',
+    'Pune',
+    ...popularKeywords,
+    ...locationKeywords,
+  ].join(', ')
   const features = [
     'Space Planning & Layout Design',
     '3D Visualizations & Renderings',
@@ -53,22 +85,22 @@ export default function InteriorDesignService() {
 
   const projects = [
     {
-      title: 'Modern Living Room',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop',
-      area: '400 sq ft',
-      duration: '3 weeks'
+      title: '2 BHK Interior Design — Forest County, Kharadi',
+      image: '/images/project/01-forest-county-kharadi-2bhk-interior-main.webp',
+      area: '1,200 sq ft',
+      duration: '38 days'
     },
     {
-      title: 'Luxury Kitchen',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
-      area: '250 sq ft',
-      duration: '4 weeks'
+      title: '2 BHK Interior — Nyati Elan, Wagholi',
+      image: '/images/project/07-nyati-elan-wagholi-2bhk-interior-main.webp',
+      area: '1,000 sq ft',
+      duration: '28 days'
     },
     {
-      title: 'Master Bedroom',
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop',
-      area: '300 sq ft',
-      duration: '2 weeks'
+      title: '3 BHK Makeover — Majestique Towers, Kharadi',
+      image: '/images/project/08-majestique-towers-kharadi-3bhk-makeover-main.webp',
+      area: '1,400 sq ft',
+      duration: '32 days'
     }
   ]
 
@@ -77,7 +109,7 @@ export default function InteriorDesignService() {
       <Head>
         <title>Interior Design Services in Pune — Home Makeover</title>
         <meta name="description" content="Professional interior design services in Pune. Complete interior design solutions with 3D visualizations, custom furniture, and turnkey execution. Free consultation available." />
-        <meta name="keywords" content="interior design, Pune, 3D visualization, custom furniture, space planning, interior designer" />
+        <meta name="keywords" content={metaKeywords} />
         <meta property="og:title" content="Interior Design Services in Pune — Home Makeover" />
         <meta property="og:description" content="Professional interior design services in Pune. Complete interior design solutions with 3D visualizations, custom furniture, and turnkey execution." />
         <meta property="og:type" content="website" />
@@ -97,7 +129,7 @@ export default function InteriorDesignService() {
         {/* Service Overview */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start lg:items-stretch">
               <div>
                 <h2 className="text-4xl font-bold mb-6">Complete Interior Design Solutions</h2>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -105,6 +137,15 @@ export default function InteriorDesignService() {
                   functionality with aesthetics. Our expert designers work closely with you to bring your vision to life, 
                   using premium materials and innovative design techniques.
                 </p>
+                <div className="prose prose-slate max-w-none mb-8">
+                  <h3>Deliverables</h3>
+                  <ul>
+                    <li>Space planning, mood boards, and 3D renders</li>
+                    <li>BOQs and material boards (laminates/veneers/fabrics)</li>
+                    <li>Modular kitchen and wardrobe CADs with hardware specs</li>
+                    <li>False ceiling and lighting plan; color and finishes guide</li>
+                  </ul>
+                </div>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   {features.map((feature, index) => (
@@ -119,21 +160,35 @@ export default function InteriorDesignService() {
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-slate-50 rounded-xl">
-                  <h3 className="font-semibold text-slate-900 mb-2">Starting Price</h3>
-                  <p className="text-slate-600">Complete interior design packages starting from ₹50,000</p>
-                </div>
+                {/* Removed starting price section as requested */}
               </div>
 
               <div className="relative">
-                <div className="w-full rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative w-full h-full min-h-[24rem] rounded-2xl overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop" 
-                    alt="Interior Design Services"
-                    className="w-full h-96 object-cover"
+                    src="/images/services/01-interior-design-hero.webp" 
+                    alt="Interior design inspiration"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas */}
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold">Interior Design Services Near You</h2>
+              <p className="text-slate-600">We actively serve prime localities across Pune</p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {locations.map(loc => (
+                <Link key={loc.slug} href={`/locations/${loc.slug}/home-interior-design`} className="px-4 py-2 rounded-full bg-white shadow-sm ring-1 ring-slate-200 text-slate-700 hover:text-primary hover:ring-primary transition">
+                  Interior Design in {loc.name}
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -191,6 +246,43 @@ export default function InteriorDesignService() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Searches (SEO) */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-2xl font-bold mb-4">Popular searches</h2>
+            <div className="flex flex-wrap gap-2">
+              {[...popularKeywords, ...locationKeywords.slice(0, 12)].map(kw => (
+                <span key={kw} className="px-3 py-1.5 rounded-full bg-secondary text-primary text-sm font-medium">{kw}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-8">Interior Design FAQs</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">How long does a 2 BHK interior take?</h3>
+                <p className="text-slate-600">Typical timelines are 25–40 days depending on scope, site readiness, and material selections.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">Do you provide 3D designs and material boards?</h3>
+                <p className="text-slate-600">Yes. We include renders, BOQs, and curated material boards to finalize the look before execution.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">Can you work within a fixed budget?</h3>
+                <p className="text-slate-600">We tailor designs and specifications to your budget while maintaining quality and aesthetics.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl ring-1 ring-slate-100">
+                <h3 className="font-semibold text-slate-900 mb-2">Do you offer warranty?</h3>
+                <p className="text-slate-600">Yes. We offer workmanship warranty alongside brand warranties on hardware and materials.</p>
+              </div>
             </div>
           </div>
         </section>
